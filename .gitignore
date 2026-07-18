@@ -1,0 +1,60 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python build artifacts
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Runtime data, logs, and temporary files
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+backups/
+
+# JavaScript build and dependency artifacts
+node_modules/
+.npm/
+.yarn/cache/
+.next/
+coverage/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+

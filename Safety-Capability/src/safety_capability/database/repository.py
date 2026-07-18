@@ -1,0 +1,16 @@
+"""Replaceable execution repository contract."""
+from abc import ABC, abstractmethod
+from typing import Any
+from safety_capability.core.result import SafetyResult
+
+class ExecutionRepository(ABC):
+    @abstractmethod
+    def save(self, result: SafetyResult, *, source: str, target: str) -> None: ...
+    @abstractmethod
+    def get(self, request_id: str) -> dict[str, Any] | None: ...
+    @abstractmethod
+    def list_records(self, limit: int = 100) -> list[dict[str, Any]]: ...
+    @abstractmethod
+    def count(self) -> int: ...
+    @abstractmethod
+    def close(self) -> None: ...

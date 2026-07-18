@@ -1,0 +1,1 @@
+# Safety Capability v0.1 has no third-party runtime dependencies.
