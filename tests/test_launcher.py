@@ -7,7 +7,7 @@ import app
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.3.3")
+        self.assertEqual(app.VERSION, "0.4.3")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()
@@ -58,7 +58,7 @@ class LauncherContractTests(unittest.TestCase):
             app.render_launcher(projects)
 
         markup = html_renderer.call_args.args[0]
-        for menu in ("Projects", "Capability", "Governance", "Architecture", "Registry"):
+        for menu in ("Projects", "Capability", "Automation", "Governance", "Architecture", "Registry"):
             self.assertIn(f">{menu}</a>", markup)
         for section_id in ("capability", "governance", "architecture", "registry"):
             self.assertIn(f'id="{section_id}"', markup)
@@ -88,6 +88,19 @@ class LauncherContractTests(unittest.TestCase):
             self.assertIn(module, markup)
         self.assertIn("v1.0.0 · STABLE", markup)
         self.assertIn("v0.3.3", markup)
+
+    def test_automation_capability_screen_modules_and_registry_are_rendered(self):
+        with patch.object(app.st, "html") as html_renderer:
+            app.render_launcher(app.get_projects())
+        markup = html_renderer.call_args.args[0]
+        self.assertGreaterEqual(markup.count("Automation Capability"), 3)
+        self.assertIn('id="automation"', markup)
+        for module in ("Workflow", "Scheduler", "Trigger", "Routine", "Auto Execution", "Auto Decision"):
+            self.assertGreaterEqual(markup.count(module), 2)
+        for stage in ("Validation", "Risk Check", "Approval", "Execution", "Logging", "Recovery"):
+            self.assertIn(stage, markup)
+        self.assertIn("Automation Capability</span><b>v1.0.0 · STABLE", markup)
+        self.assertIn("v0.4.3", markup)
 
 if __name__ == "__main__":
     unittest.main()

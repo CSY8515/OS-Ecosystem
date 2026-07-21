@@ -1,5 +1,16 @@
 # OS Ecosystem Roadmap
 
+## v0.4.3 - Automation Capability
+
+- [x] Approve the independent Automation Capability architecture.
+- [x] Preserve the Safety and Enhancement Capability structure and extension model.
+- [x] Implement Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision.
+- [x] Add Safety validation, risk, approval, logging, and recovery interfaces.
+- [x] Add an Enhancement advisory-input interface.
+- [x] Add the Capability menu entry, dedicated Automation screen, and Registry identity.
+- [x] Add package, integration, launcher, and regression tests.
+- [x] Publish the v0.4.3 GitHub release and confirm the Streamlit deployment.
+
 ## v0.3.3 - Enhancement Capability
 
 - [x] Approve the Enhancement Capability architecture.

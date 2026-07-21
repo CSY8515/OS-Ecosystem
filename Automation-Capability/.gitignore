@@ -1,0 +1,9 @@
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite*
+build/
+dist/
+*.egg-info/
+

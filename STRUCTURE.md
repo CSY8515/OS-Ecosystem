@@ -1,6 +1,6 @@
 # OS Ecosystem Structure
 
-Version: v0.3.3
+Version: v0.4.3
 
 ```text
 OS-Ecosystem/
@@ -11,6 +11,7 @@ OS-Ecosystem/
 |-- Universal-Learning-Engine/      # independent connected project
 |-- Safety-Capability/              # independent safety capability; surfaced in Capability UI
 |-- Enhancement-Capability/         # independent shared learning and optimization capability
+|-- Automation-Capability/          # independent shared automation capability
 |-- tests/
 |   `-- test_launcher.py            # launcher contract tests
 |-- app.py                          # Streamlit launcher entry point

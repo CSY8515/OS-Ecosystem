@@ -2,22 +2,24 @@
 
 OS Ecosystem is the governance, architecture, registry, and navigation layer that connects independent projects without merging their runtimes.
 
-**Current version:** v0.3.3
+**Current version:** v0.4.3
 **Status:** Stable
 **Projects:** Living OS, Universal Learning Engine
-**Capabilities:** Safety, Enhancement
+**Capabilities:** Safety, Enhancement, Automation
 **Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
 
 ## Product contract
 
 - No sidebar and no conventional dashboard.
-- A compact menu exposes Projects, Capability, Governance, Architecture, and Registry without adding a sidebar.
+- A compact menu exposes Projects, Capability, Automation, Governance, Architecture, and Registry without adding a sidebar.
 - `OS ECOSYSTEM` remains the visual center.
 - Projects appear as surrounding nodes.
 - Selecting a connected node opens that project's own UI.
 - Each project remains independently owned, versioned, deployed, and operated.
 - Governance, architecture, and registry identifiers are visible while databases, runtimes, credentials, and operational internals remain hidden.
 - Enhancement provides one shared Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation foundation for all projects.
+- Automation provides shared Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision modules for all projects.
+- Automation integrates with Safety through validation, risk, approval, logging, and recovery gates, and consumes Enhancement results only as advisory inputs.
 
 ## Run locally
 

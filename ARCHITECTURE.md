@@ -1,6 +1,6 @@
 # OS Ecosystem Architecture
 
-Version: v0.3.3
+Version: v0.4.3
 
 ## Purpose
 
@@ -12,16 +12,27 @@ OS Ecosystem is the governance, architecture, registry, capability, and navigati
 OS Ecosystem
 `-- Capability Layer
     |-- Safety Capability v1.0.0
-    `-- Enhancement Capability v1.0.0
+    |-- Enhancement Capability v1.0.0
         |-- Analytics
         |-- Learning
         |-- Pattern Analysis
         |-- Knowledge Management
         |-- Optimization
         `-- Rule Generation
+    `-- Automation Capability v1.0.0
+        |-- Workflow
+        |-- Scheduler
+        |-- Trigger
+        |-- Routine
+        |-- Auto Execution
+        `-- Auto Decision
 ```
 
 Capabilities are independent packages with common core, interface, registry, execution, database, component, test, and documentation boundaries. Projects consume their public contracts explicitly; capabilities do not import projects or own project data. New capabilities and components follow the same registration and extension path.
+
+## Automation integration
+
+Automation follows the governed flow `Validation -> Risk Check -> Approval -> Execution -> Logging`, with `Recovery` available after unexpected execution failures. Safety integration is an explicit gateway: denied or critical-risk work is blocked and Auto Execution requires user approval. Enhancement integration accepts advisory results from Analytics, Pattern Analysis, Optimization, and Rule Generation without transferring authority or data ownership.
 
 ## Runtime flow
 

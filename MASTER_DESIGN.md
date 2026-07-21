@@ -1,6 +1,6 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.3.3
+Canonical version: v0.4.3
 
 ## Product statement
 
@@ -17,7 +17,7 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 ## Spatial design
 
 - Full-viewport canvas with no sidebar.
-- Compact top navigation for Projects, Capability, Governance, Architecture, and Registry.
+- Compact top navigation for Projects, Capability, Automation, Governance, Architecture, and Registry.
 - Document-like ecosystem sections continue below the preserved central launcher.
 - Circular central core containing the ecosystem identity and version.
 - Connected project nodes placed on opposing sides of the core.
@@ -56,7 +56,9 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 - Governance contains Constitution, Rules, Principles, Standards, and Policies.
 - Architecture contains Master Architecture, Repository Strategy, Integration Strategy, and Roadmap.
 - Registry contains Project Registry, Capability Registry, and Release History.
-- Capability contains Safety and Enhancement, with all six Enhancement core modules visible.
+- Capability contains Safety, Enhancement, and Automation, with each Capability's approved core modules visible.
+- Automation has a dedicated overview showing Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision.
+- The governed automation flow is visible as Validation, Risk Check, Approval, Execution, Logging, and Recovery.
 - Connected nodes navigate to configured HTTP(S) project UIs.
 - Missing or invalid destinations cannot become unsafe links.
 - Layout remains usable on mobile and with reduced motion.

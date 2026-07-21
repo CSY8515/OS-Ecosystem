@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.3.3 unified launcher and capability catalog."""
+"""OS Ecosystem v0.4.3 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.3.3"
+VERSION = "0.4.3"
 
 
 @dataclass(frozen=True)
@@ -105,6 +105,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           <nav class="ecosystem-nav" aria-label="Ecosystem menu">
             <a href="#projects">Projects</a>
             <a href="#capability">Capability</a>
+            <a href="#automation">Automation</a>
             <a href="#governance">Governance</a>
             <a href="#architecture">Architecture</a>
             <a href="#registry">Registry</a>
@@ -144,7 +145,34 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <p>The shared analysis, learning, and continuous-improvement engine for all projects.</p>
                   <div class="module-list"><span>Analytics</span><span>Learning</span><span>Pattern Analysis</span><span>Knowledge Management</span><span>Optimization</span><span>Rule Generation</span></div>
                 </article>
+                <article class="ecosystem-item capability-item automation-item">
+                  <span class="item-index">CAP-03 · NEW IN v0.4.3</span>
+                  <h3>Automation Capability</h3>
+                  <p>The shared governed automation platform for every ecosystem project.</p>
+                  <div class="module-list"><span>Workflow</span><span>Scheduler</span><span>Trigger</span><span>Routine</span><span>Auto Execution</span><span>Auto Decision</span></div>
+                  <a class="capability-link" href="#automation">Open capability overview</a>
+                </article>
               </div>
+            </section>
+
+            <section class="ecosystem-section automation-section" id="automation">
+              <header class="section-heading">
+                <span class="section-kicker">01A / AUTOMATION CAPABILITY</span>
+                <h2>Automation Capability</h2>
+                <p>One project-neutral platform for workflows, schedules, events, routines, governed execution, and decision support.</p>
+              </header>
+              <div class="automation-flow" aria-label="Safety governed automation flow">
+                <span>Validation</span><i>→</i><span>Risk Check</span><i>→</i><span>Approval</span><i>→</i><span>Execution</span><i>→</i><span>Logging</span><i>→</i><span>Recovery</span>
+              </div>
+              <div class="ecosystem-grid automation-grid">
+                <article class="ecosystem-item"><span class="item-index">AUT-01</span><h3>Workflow</h3><p>Manages task flows and defines explicit execution order.</p></article>
+                <article class="ecosystem-item"><span class="item-index">AUT-02</span><h3>Scheduler</h3><p>Controls scheduled and recurring execution.</p></article>
+                <article class="ecosystem-item"><span class="item-index">AUT-03</span><h3>Trigger</h3><p>Evaluates events and conditions before execution.</p></article>
+                <article class="ecosystem-item"><span class="item-index">AUT-04</span><h3>Routine</h3><p>Manages daily, weekly, and monthly routines.</p></article>
+                <article class="ecosystem-item"><span class="item-index">AUT-05 · APPROVAL AWARE</span><h3>Auto Execution</h3><p>Executes approved work, records outcomes, isolates failures, and exposes recovery.</p></article>
+                <article class="ecosystem-item"><span class="item-index">AUT-06 · ADVISORY</span><h3>Auto Decision</h3><p>Generates candidates and recommendations under configurable user-approval policies.</p></article>
+              </div>
+              <p class="integration-note">Enhancement inputs: Analytics · Pattern Analysis · Optimization · Rule Generation</p>
             </section>
 
             <section class="ecosystem-section" id="governance">
@@ -212,7 +240,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-05</span>
                   <h3>Capability Architecture</h3>
-                  <p>Safety and Enhancement remain independent foundations above project runtimes and extend through shared public contracts.</p>
+                  <p>Safety, Enhancement, and Automation remain independent foundations above project runtimes and extend through shared public contracts.</p>
                 </article>
               </div>
             </section>
@@ -235,11 +263,13 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <h3>Capability Registry</h3>
                   <div class="registry-row"><span>Safety Capability</span><b>v1.0.0 · INTERNAL</b></div>
                   <div class="registry-row"><span>Enhancement Capability</span><b>v1.0.0 · STABLE</b></div>
+                  <div class="registry-row"><span>Automation Capability</span><b>v1.0.0 · STABLE</b></div>
                   <p>Capability identities and approved module scope are visible; runtime internals remain governed.</p>
                 </article>
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.4.3</span><b>AUTOMATION CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.3.3</span><b>ENHANCEMENT CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.2.3</span><b>ECOSYSTEM LAYER</b></div>
                   <div class="registry-row"><span>v0.2.2</span><b>UI STABILITY</b></div>
@@ -287,7 +317,8 @@ def apply_theme() -> None:
         .section-heading p { grid-column:2; margin:12px 0 0; color:#7f9294; font-size:12px; }
         .ecosystem-grid { display:grid; gap:1px; padding:1px; background:rgba(143,225,219,.09); }
         .governance-grid { grid-template-columns:repeat(5,1fr); }
-        .capability-grid { grid-template-columns:1fr 2fr; }
+        .capability-grid { grid-template-columns:repeat(3,1fr); }
+        .automation-grid { grid-template-columns:repeat(3,1fr); }
         .architecture-grid { grid-template-columns:repeat(5,1fr); }
         .registry-grid { grid-template-columns:repeat(3,1fr); }
         .ecosystem-item { min-height:210px; padding:27px; background:#091415; }
@@ -299,6 +330,12 @@ def apply_theme() -> None:
         .registry-row b { color:var(--cyan); font-size:8px; letter-spacing:.08em; font-weight:500; text-align:right; }
         .registry-item p { margin-top:18px; }
         .enhancement-item { background:linear-gradient(135deg,#0b1b1c,#091415); box-shadow:inset 0 2px 0 rgba(143,225,219,.45); }
+        .automation-item { background:linear-gradient(135deg,#102122,#091415); box-shadow:inset 0 2px 0 rgba(117,227,174,.65); }
+        .capability-link { display:inline-block; margin-top:20px; color:var(--cyan) !important; text-decoration:none !important; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+        .automation-flow { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:-8px 0 30px; padding:18px 20px; border:1px solid rgba(143,225,219,.13); background:rgba(9,20,21,.72); }
+        .automation-flow span { color:#b7c5c5; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+        .automation-flow i { color:#507173; font-style:normal; }
+        .integration-note { margin:22px 0 0; color:#718789; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
         .module-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:22px; }
         .module-list span { padding:6px 8px; border:1px solid rgba(143,225,219,.12); color:#9eb2b3; font-size:8px; letter-spacing:.06em; text-transform:uppercase; }
         .ecosystem-stage { min-height:calc(100vh - 78px); position:relative; display:grid; place-items:center; }
@@ -345,7 +382,8 @@ def apply_theme() -> None:
           .section-heading { grid-template-columns:1fr; }
           .section-heading h2 { margin-top:18px; }
           .section-heading p { grid-column:1; }
-          .capability-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
+          .capability-grid,.automation-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
+          .automation-flow { flex-wrap:wrap; justify-content:center; }
           .ecosystem-item { min-height:auto; }
         }
         @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } }

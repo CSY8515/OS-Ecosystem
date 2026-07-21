@@ -1,8 +1,15 @@
-# OS Ecosystem v0.3.3 Release Notes
+# OS Ecosystem v0.4.3 Release Notes
 
 Status: Stable
 
 ## Included
+
+- Independent Automation Capability v1.0.0 following the established Safety and Enhancement package boundaries.
+- Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision modules.
+- Governed `Validation -> Risk Check -> Approval -> Execution -> Logging -> Recovery` integration contract.
+- Explicit Safety gateway with approval-aware execution and critical-risk blocking.
+- Enhancement gateway for advisory Analytics, Pattern Analysis, Optimization, and Rule Generation results.
+- Dedicated Automation UI, Capability Registry entry, architecture map, and contract tests.
 
 - Independent Enhancement Capability v1.0.0 with the same structural boundaries as Safety Capability.
 - Shared Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation modules.
@@ -29,18 +36,19 @@ Status: Stable
 - Connected projects remain independently owned, versioned, tested, and deployed.
 - The launcher does not import, execute, or persist project internals.
 - Registries expose approved identity and version metadata only; database, runtime, secret, health, and implementation details remain hidden.
-- Safety and Enhancement remain independent Capability-layer packages, not project launcher nodes.
+- Safety, Enhancement, and Automation remain independent Capability-layer packages, not project launcher nodes.
+- Automation does not perform unapproved external side effects; connected projects retain final execution and data authority.
 
 ## Release identity
 
 - Repository: OS Ecosystem
-- Version and intended tag: v0.3.3
+- Version and intended tag: v0.4.3
 - Living OS baseline: `v2.0.4`
 - Universal Learning Engine baseline: `v1.0.0`
 
 ## Validation and publication
 
-- Ecosystem launcher and independent Capability contract tests pass.
+- Ecosystem launcher and all three independent Capability contract suites pass.
 - Streamlit AppTest completes without application exceptions.
 - The Streamlit deployment completed and its server reached the running state.
 - Living OS and Universal Learning Engine production destinations are connected.
