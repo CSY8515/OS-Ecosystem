@@ -77,7 +77,7 @@ def _project_node(project: Project) -> str:
     if project.url:
         url = html.escape(project.url, quote=True)
         return f"""
-        <a class="{classes}" href="{url}" target="_self" aria-label="{name} 열기">
+        <a class="{classes}" href="{url}" target="_blank" rel="noopener noreferrer" aria-label="{name} 열기">
           <span class="node-orbit" aria-hidden="true"></span>
           <span class="node-index">CONNECTED PROJECT</span>
           <strong>{name}</strong>

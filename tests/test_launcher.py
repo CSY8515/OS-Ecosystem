@@ -37,6 +37,17 @@ class LauncherContractTests(unittest.TestCase):
         rendered = app._project_node(project)
         self.assertIn("a=1&amp;b=2", rendered)
 
+    def test_connected_destination_opens_directly_in_new_tab(self):
+        project = app.Project(
+            "Example", "EXAMPLE", "Description", "https://example.com/app", "node-left"
+        )
+        rendered = app._project_node(project)
+        self.assertIn('href="https://example.com/app"', rendered)
+        self.assertIn('target="_blank"', rendered)
+        self.assertIn('rel="noopener noreferrer"', rendered)
+        self.assertNotIn("share.streamlit.io", rendered)
+
+
 
 if __name__ == "__main__":
     unittest.main()
