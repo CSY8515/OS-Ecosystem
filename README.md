@@ -2,7 +2,7 @@
 
 OS Ecosystem is a focused launcher that connects independent projects without exposing their internal capabilities, databases, or runtimes.
 
-**Current version:** v0.2.0
+**Current version:** v0.2.1
 **Status:** Release candidate
 **Initial projects:** Living OS, Universal Learning Engine
 
@@ -22,7 +22,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The Living OS production URL is included as a default. Configure `ULE_URL` in Streamlit Secrets or the environment when the Universal Learning Engine deployment URL is available. Both destinations can be overridden with `LIVING_OS_URL` and `ULE_URL`.
+Production URLs for Living OS and Universal Learning Engine are included as defaults. Both destinations can be overridden with `LIVING_OS_URL` and `ULE_URL` in Streamlit Secrets or the environment.
 
 ## Documentation
 

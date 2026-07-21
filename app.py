@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.2.0 — unified launcher for independent projects."""
+"""OS Ecosystem v0.2.1 — unified launcher for independent projects."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 
 @dataclass(frozen=True)
@@ -60,7 +60,10 @@ def get_projects() -> tuple[Project, ...]:
             name="Universal Learning Engine",
             label="LEARNING",
             description="어떤 주제든 구조화된 학습 경험으로",
-            url=_configured_url("ULE_URL"),
+            url=_configured_url(
+                "ULE_URL",
+                "https://universal-learning-engine-zb5aezuadeu84gnqust8mw.streamlit.app/",
+            ),
             position="node-right",
         ),
     )

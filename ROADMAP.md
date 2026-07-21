@@ -1,6 +1,6 @@
 # OS Ecosystem Roadmap
 
-## v0.2.0 - Initial launcher
+## v0.2.1 - Connected launcher
 
 - [x] Establish the OS Ecosystem repository
 - [x] Confirm the current version
@@ -12,7 +12,7 @@
 - [x] Add automated launcher tests
 - [ ] Publish the GitHub release
 - [ ] Deploy OS Ecosystem to Streamlit Community Cloud
-- [ ] Connect the Universal Learning Engine production URL
+- [x] Connect the Universal Learning Engine production URL
 
 ## v0.3.0 - Connection maturity
 

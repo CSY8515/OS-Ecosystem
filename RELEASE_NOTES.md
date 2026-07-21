@@ -1,4 +1,4 @@
-# OS Ecosystem v0.2.0 Release Notes
+# OS Ecosystem v0.2.1 Release Notes
 
 Status: Release candidate
 
@@ -23,7 +23,7 @@ Status: Release candidate
 ## Release identity
 
 - Repository: OS Ecosystem
-- Version and intended tag: `v0.2.0`
+- Version and intended tag: `v0.2.1`
 - Living OS baseline: `v2.0.4`
 - Universal Learning Engine baseline: `v1.0.0`
 
@@ -31,5 +31,5 @@ Status: Release candidate
 
 - Automated tests must pass.
 - A Streamlit smoke test must reach a healthy state.
-- `ULE_URL` must be configured after the Universal Learning Engine has a production deployment.
+- Both initial project production destinations must be connected.
 - GitHub release and Streamlit deployment remain pending until publication credentials are available.
