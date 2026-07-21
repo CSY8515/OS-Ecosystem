@@ -1,10 +1,10 @@
 # OS Ecosystem Architecture
 
-Version: v0.2.2
+Version: v0.2.3
 
 ## Purpose
 
-OS Ecosystem is a navigation shell, not a shared application runtime. It gives users one entry point while preserving the autonomy of every connected project.
+OS Ecosystem is the governance, architecture, registry, and navigation shell above independent project runtimes. It provides shared system authority without merging project execution or data ownership.
 
 ## Runtime flow
 
@@ -16,9 +16,13 @@ OS Ecosystem is a navigation shell, not a shared application runtime. It gives u
 
 ## Boundaries
 
-### Public launcher layer
+### Public ecosystem layer
 
 - Central ecosystem identity
+- Projects menu and direct external project links
+- Governance constitution, rules, principles, standards, and policies
+- Master, repository, integration, and roadmap architecture
+- Project, capability, and release registries
 - Project nodes
 - Project descriptions
 - Destination links
@@ -26,13 +30,13 @@ OS Ecosystem is a navigation shell, not a shared application runtime. It gives u
 
 ### Hidden operational layer
 
-- Project capabilities and feature registries
+- Capability implementation details and feature registries
 - Databases, schemas, and storage
 - Runtime processes and execution contracts
 - Credentials and deployment secrets
 - Integration adapters and internal health data
 
-The hidden layer may support operation, but it must not become launcher navigation or dashboard content.
+The public registry exposes approved identities, versions, classifications, and release history only. Implementation details remain hidden and cannot become dashboard content.
 
 ## Independence contract
 

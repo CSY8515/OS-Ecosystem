@@ -1,6 +1,6 @@
 # OS Ecosystem Roadmap
 
-## v0.2.2 - Connected launcher
+## v0.2.3 - Ecosystem layer
 
 - [x] Establish the OS Ecosystem repository
 - [x] Confirm the current version
@@ -13,6 +13,11 @@
 - [x] Publish the GitHub release
 - [x] Deploy OS Ecosystem to Streamlit Community Cloud
 - [x] Connect the Universal Learning Engine production URL
+- [x] Preserve direct external links without redirect intermediaries
+- [x] Add Projects, Governance, Architecture, and Registry menus
+- [x] Publish the Ecosystem governance set
+- [x] Publish the architecture strategy set
+- [x] Publish project, capability, and release registries
 
 ## v0.3.0 - Connection maturity
 

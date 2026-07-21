@@ -1,8 +1,8 @@
 # OS Ecosystem
 
-OS Ecosystem is a focused launcher that connects independent projects without exposing their internal capabilities, databases, or runtimes.
+OS Ecosystem is the governance, architecture, registry, and navigation layer that connects independent projects without merging their runtimes.
 
-**Current version:** v0.2.2
+**Current version:** v0.2.3
 **Status:** Stable
 **Initial projects:** Living OS, Universal Learning Engine
 **Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
@@ -10,11 +10,12 @@ OS Ecosystem is a focused launcher that connects independent projects without ex
 ## Product contract
 
 - No sidebar and no conventional dashboard.
+- A compact menu exposes Projects, Governance, Architecture, and Registry without adding a sidebar.
 - `OS ECOSYSTEM` remains the visual center.
 - Projects appear as surrounding nodes.
 - Selecting a connected node opens that project's own UI.
 - Each project remains independently owned, versioned, deployed, and operated.
-- Capability, database, runtime, and integration details are not presented in the launcher.
+- Governance, architecture, and registry identifiers are visible while databases, runtimes, credentials, and operational internals remain hidden.
 
 ## Run locally
 

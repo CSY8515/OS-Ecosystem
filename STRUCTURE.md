@@ -1,6 +1,6 @@
 # OS Ecosystem Structure
 
-Version: v0.2.2
+Version: v0.2.3
 
 ```text
 OS-Ecosystem/

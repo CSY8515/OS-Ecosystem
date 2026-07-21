@@ -1,15 +1,15 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.2.2
+Canonical version: v0.2.3
 
 ## Product statement
 
-OS Ecosystem is the quiet front door to a family of independent systems. It creates coherence through navigation, not by merging products or exposing their machinery.
+OS Ecosystem is the quiet governance and navigation layer for a family of independent systems. It creates coherence through shared rules, architecture, registries, and direct project entry without merging runtimes.
 
 ## Experience principles
 
 1. **Center before chrome.** The first visual anchor is `OS ECOSYSTEM`, not navigation furniture.
-2. **Projects, not internals.** Users choose outcomes and project identities; capabilities, databases, and runtimes remain hidden.
+2. **Governed visibility.** Users can inspect approved governance, architecture, and registry identities while implementation details remain hidden.
 3. **One deliberate action.** A project node opens that project's UI directly.
 4. **Independent by design.** Connection never implies shared data ownership or a shared release lifecycle.
 5. **Calm technical confidence.** The interface feels precise, spacious, and operational without becoming a monitoring dashboard.
@@ -17,6 +17,8 @@ OS Ecosystem is the quiet front door to a family of independent systems. It crea
 ## Spatial design
 
 - Full-viewport canvas with no sidebar.
+- Compact top navigation for Projects, Governance, Architecture, and Registry.
+- Document-like ecosystem sections continue below the preserved central launcher.
 - Circular central core containing the ecosystem identity and version.
 - Connected project nodes placed on opposing sides of the core.
 - Thin connection lines communicate membership, not data flow.
@@ -51,7 +53,10 @@ OS Ecosystem is the quiet front door to a family of independent systems. It crea
 - No visible Streamlit sidebar, toolbar, or generic dashboard cards.
 - `OS ECOSYSTEM` is centered at desktop widths.
 - Living OS and Universal Learning Engine are the only public project nodes.
+- Governance contains Constitution, Rules, Principles, Standards, and Policies.
+- Architecture contains Master Architecture, Repository Strategy, Integration Strategy, and Roadmap.
+- Registry contains Project Registry, Capability Registry, and Release History.
 - Connected nodes navigate to configured HTTP(S) project UIs.
 - Missing or invalid destinations cannot become unsafe links.
 - Layout remains usable on mobile and with reduced motion.
-- No internal Capability, DB, Runtime, or credential details appear in the rendered UI.
+- Capability registry identity may be shown, but databases, runtimes, credentials, and implementation details remain hidden.

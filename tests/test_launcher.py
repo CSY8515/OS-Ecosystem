@@ -7,7 +7,7 @@ import app
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.2.2")
+        self.assertEqual(app.VERSION, "0.2.3")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()
@@ -48,6 +48,35 @@ class LauncherContractTests(unittest.TestCase):
         self.assertNotIn("share.streamlit.io", rendered)
 
 
+
+    def test_ecosystem_hierarchy_menu_and_sections_are_rendered(self):
+        projects = (
+            app.Project("Living OS", "LIVING", "Living", "https://living.example.com", "node-left"),
+            app.Project("Universal Learning Engine", "LEARNING", "Learning", "https://learning.example.com", "node-right"),
+        )
+        with patch.object(app.st, "html") as html_renderer:
+            app.render_launcher(projects)
+
+        markup = html_renderer.call_args.args[0]
+        for menu in ("Projects", "Governance", "Architecture", "Registry"):
+            self.assertIn(f">{menu}</a>", markup)
+        for section_id in ("governance", "architecture", "registry"):
+            self.assertIn(f'id="{section_id}"', markup)
+        for item in (
+            "Ecosystem Constitution",
+            "Ecosystem Rules",
+            "Ecosystem Principles",
+            "Ecosystem Standards",
+            "Ecosystem Policies",
+            "Master Architecture",
+            "Repository Strategy",
+            "Integration Strategy",
+            "Roadmap",
+            "Project Registry",
+            "Capability Registry",
+            "Release History",
+        ):
+            self.assertIn(item, markup)
 
 if __name__ == "__main__":
     unittest.main()
