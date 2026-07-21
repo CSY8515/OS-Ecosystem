@@ -58,3 +58,7 @@ Desktop.ini
 .idea/
 .vscode/
 
+
+# Connected projects remain independent repositories
+/Living-OS/
+/Universal-Learning-Engine/

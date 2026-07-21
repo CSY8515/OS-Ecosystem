@@ -1,31 +1,35 @@
-# OS Ecosystem v0.1.0 Release Notes
+# OS Ecosystem v0.2.0 Release Notes
 
-Status: Stable release candidate
+Status: Release candidate
 
 ## Included
 
-- Safety Capability v1.0.0 stable foundation.
-- Request, result, error, health, component, and persistence contracts.
-- Deterministic component registration and action routing.
-- Isolated validation and component execution with controlled failure results.
-- SQLite-backed execution persistence.
-- Capability and component health reporting.
-- Public, extension, and private boundary documentation.
-- Python wheel and source distribution packaging.
+- A dedicated Streamlit launcher with no sidebar or conventional dashboard.
+- Central `OS ECOSYSTEM` identity with surrounding project nodes.
+- Living OS as a connected production destination.
+- Universal Learning Engine as a configuration-ready destination.
+- Safe HTTP(S) destination validation and a clear pending state.
+- Responsive mobile layout and reduced-motion support.
+- Architecture, structure, roadmap, master design, and deployment guidance.
+- Automated launcher contract tests.
 
-## Validation
+## Product boundaries
 
-- 24 automated tests pass.
-- Wheel and source distribution preflight builds pass.
-- Clean wheel installation and import pass on Python 3.11 or newer.
-- Runtime execution, persistence readback, controlled error handling, and health checks pass.
-- Deployment rollback is defined as reinstalling a previously verified immutable artifact.
+- Connected projects remain independently owned, versioned, tested, and deployed.
+- The launcher does not import, execute, or persist project internals.
+- Capability, database, runtime, secret, and health details remain outside the user interface.
+- Safety Capability remains an internal repository component and is not a launcher node.
 
 ## Release identity
 
 - Repository: OS Ecosystem
-- Repository version and tag: `v0.1.0`
-- Included capability: Safety Capability `1.0.0`
+- Version and intended tag: `v0.2.0`
+- Living OS baseline: `v2.0.4`
+- Universal Learning Engine baseline: `v1.0.0`
 
-Living OS and Universal Learning Engine remain independent repositories and are not
-included in this release artifact.
+## Publication gates
+
+- Automated tests must pass.
+- A Streamlit smoke test must reach a healthy state.
+- `ULE_URL` must be configured after the Universal Learning Engine has a production deployment.
+- GitHub release and Streamlit deployment remain pending until publication credentials are available.
