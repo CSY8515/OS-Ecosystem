@@ -1,6 +1,6 @@
 # OS Ecosystem Architecture
 
-Version: v0.5.0
+Version: v0.6.0
 
 ## Purpose
 
@@ -32,6 +32,12 @@ OS Ecosystem
         |-- Internal Messaging and Sync Foundation
         |-- Health and Failure Handling
         `-- Execution Records
+    `-- Personal Secretary Capability v1.0.0
+        |-- Daily / Weekly / Monthly Synthesis
+        |-- Reminder and Notification
+        |-- Recommendation and Priority
+        |-- Decision Support
+        `-- Advisory Secretary Service
 ```
 
 Capabilities are independent packages with common core, interface, registry, execution, database, component, test, and documentation boundaries. Projects consume their public contracts explicitly; capabilities do not import projects or own project data. New capabilities and components follow the same registration and extension path.
@@ -45,6 +51,8 @@ Automation follows the governed flow `Validation -> Risk Check -> Approval -> Ex
 Every connector request follows `Request -> Safety validation -> Provider execution -> Response validation -> Sanitized record`. Providers are replaceable behind a base contract and publish supported operations explicitly. Enhancement consumes aggregate success, latency, and failure evidence. Automation invokes the same governed service method and cannot bypass Safety. Project data schemas, credentials, and business transformations remain with their owners.
 
 ## Runtime flow
+
+Personal Secretary follows `Project snapshots -> deterministic synthesis -> Safety validation -> recommendation -> user decision`. Enhancement and Collaboration are optional data/insight gateways. An explicit Automation request may be forwarded, but Automation retains approval and execution authority. AI Hub is a reserved optional interface; Personal Secretary v1.0.0 has no AI dependency.
 
 1. Streamlit loads the launcher and its public project catalog.
 2. The launcher resolves each destination from Streamlit Secrets, environment variables, or an approved default.

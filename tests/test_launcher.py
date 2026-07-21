@@ -9,7 +9,7 @@ from streamlit.testing.v1 import AppTest
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.5.0")
+        self.assertEqual(app.VERSION, "0.6.0")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()
@@ -60,7 +60,7 @@ class LauncherContractTests(unittest.TestCase):
             app.render_launcher(projects)
 
         markup = html_renderer.call_args.args[0]
-        for menu in ("Projects", "Capability", "Automation", "Connectivity", "Governance", "Architecture", "Registry"):
+        for menu in ("Projects", "Capability", "Secretary", "Automation", "Connectivity", "Governance", "Architecture", "Registry"):
             self.assertIn(f">{menu}</a>", markup)
         for section_id in ("capability", "governance", "architecture", "registry"):
             self.assertIn(f'id="{section_id}"', markup)
@@ -120,6 +120,18 @@ class LauncherContractTests(unittest.TestCase):
         app_test = AppTest.from_file(str(Path(app.__file__)), default_timeout=20)
         app_test.run()
         self.assertEqual(list(app_test.exception), [])
+
+    def test_personal_secretary_status_and_registry_are_rendered(self):
+        with patch.object(app.st, "html") as html_renderer:
+            app.render_launcher(app.get_projects())
+        markup = html_renderer.call_args.args[0]
+        self.assertIn('id="secretary"', markup)
+        for field in ("CAPABILITY VERSION", "TODAY'S BRIEFING", "PENDING REMINDER", "RECOMMENDATION COUNT", "NOTIFICATION STATUS"):
+            self.assertIn(field, markup)
+        for function in ("Daily Briefing", "Weekly Review", "Monthly Review", "Smart Reminder", "Recommendation Engine", "Priority Manager", "Decision Support", "Notification Manager"):
+            self.assertIn(function, markup)
+        self.assertIn("Personal Secretary</span><b>v1.0.0", markup)
+        self.assertIn("v0.6.0", markup)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.5.0
+Canonical version: v0.6.0
 
 ## Product statement
 
@@ -17,7 +17,7 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 ## Spatial design
 
 - Full-viewport canvas with no sidebar.
-- Compact top navigation for Projects, Capability, Automation, Connectivity, Governance, Architecture, and Registry.
+- Compact top navigation for Projects, Capability, Secretary, Automation, Connectivity, Governance, Architecture, and Registry.
 - Document-like ecosystem sections continue below the preserved central launcher.
 - Circular central core containing the ecosystem identity and version.
 - Connected project nodes placed on opposing sides of the core.
@@ -56,10 +56,11 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 - Governance contains Constitution, Rules, Principles, Standards, and Policies.
 - Architecture contains Master Architecture, Repository Strategy, Integration Strategy, and Roadmap.
 - Registry contains Project Registry, Capability Registry, and Release History.
-- Capability contains Safety, Enhancement, Automation, and Collaboration & Connectivity, with each Capability's approved core modules visible.
+- Capability contains Safety, Enhancement, Automation, Collaboration & Connectivity, and Personal Secretary, with each Capability's approved core modules visible.
 - Automation has a dedicated overview showing Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision.
 - The governed automation flow is visible as Validation, Risk Check, Approval, Execution, Logging, and Recovery.
 - Collaboration & Connectivity displays capability version, registered/available/degraded connectors, last health check, and recent result with demo state clearly labeled.
+- Personal Secretary displays capability version, briefing readiness, reminder ownership, recommendation mode, and notification status; its advice remains deterministic and non-autonomous.
 - Connected nodes navigate to configured HTTP(S) project UIs.
 - Missing or invalid destinations cannot become unsafe links.
 - Layout remains usable on mobile and with reduced motion.

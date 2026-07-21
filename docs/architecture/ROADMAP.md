@@ -1,5 +1,15 @@
 # OS Ecosystem Roadmap
 
+## v0.6.0 - Personal Secretary Capability
+
+- [x] Approve advisory, project-neutral architecture and data ownership boundaries.
+- [x] Implement Daily Briefing, Weekly Review, Monthly Review, Smart Reminder, Recommendation, Priority, Decision Support, Notification, and Secretary Service.
+- [x] Keep the default runtime deterministic and independent of AI.
+- [x] Integrate explicit Safety, Enhancement, Automation, and Collaboration gateways.
+- [x] Reserve the AI Hub interface for a later release.
+- [x] Add package, integration, launcher, documentation, and registry coverage.
+- [x] Prepare v0.6.0 release evidence.
+
 ## v0.5.0 - Collaboration & Connectivity Capability
 
 - [x] Approve project-neutral connector and exchange architecture.

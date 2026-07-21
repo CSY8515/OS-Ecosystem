@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.5.0 unified launcher and capability catalog."""
+"""OS Ecosystem v0.6.0 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.5.0"
+VERSION = "0.6.0"
 
 
 @dataclass(frozen=True)
@@ -105,6 +105,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           <nav class="ecosystem-nav" aria-label="Ecosystem menu">
             <a href="#projects">Projects</a>
             <a href="#capability">Capability</a>
+            <a href="#secretary">Secretary</a>
             <a href="#automation">Automation</a>
             <a href="#connectivity">Connectivity</a>
             <a href="#governance">Governance</a>
@@ -160,7 +161,31 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <div class="module-list"><span>Registry</span><span>Contracts</span><span>Import / Export</span><span>Messaging</span><span>Sync</span><span>Health</span></div>
                   <a class="capability-link" href="#connectivity">Open capability status</a>
                 </article>
+                <article class="ecosystem-item capability-item secretary-item">
+                  <span class="item-index">CAP-05 · NEW IN v0.6.0</span>
+                  <h3>Personal Secretary Capability</h3>
+                  <p>Deterministic briefings, reminders, recommendations, priorities, comparisons, and notifications.</p>
+                  <div class="module-list"><span>Briefing</span><span>Review</span><span>Reminder</span><span>Recommendation</span><span>Priority</span><span>Decision</span><span>Notification</span></div>
+                  <a class="capability-link" href="#secretary">Open secretary overview</a>
+                </article>
               </div>
+            </section>
+
+            <section class="ecosystem-section secretary-section" id="secretary">
+              <header class="section-heading">
+                <span class="section-kicker">01C / PERSONAL SECRETARY</span>
+                <h2>Personal Secretary</h2>
+                <p>An advisory synthesis layer that works without AI and leaves data ownership and execution authority with their existing projects and capabilities.</p>
+              </header>
+              <div class="ecosystem-grid secretary-grid">
+                <article class="ecosystem-item"><span class="item-index">CAPABILITY VERSION</span><h3>v1.0.0</h3><p>Stable, deterministic, project-neutral public contracts.</p></article>
+                <article class="ecosystem-item"><span class="item-index">TODAY'S BRIEFING</span><h3>Ready</h3><p>Priorities, events, reminders, and recommendations from caller-provided snapshots.</p></article>
+                <article class="ecosystem-item"><span class="item-index">PENDING REMINDER</span><h3>Source Managed</h3><p>Schedules and durable reminder data remain owned by their source projects.</p></article>
+                <article class="ecosystem-item"><span class="item-index">RECOMMENDATION COUNT</span><h3>On Demand</h3><p>Transparent rankings are calculated only from supplied context.</p></article>
+                <article class="ecosystem-item"><span class="item-index">NOTIFICATION STATUS</span><h3>Deduplicated</h3><p>Repeated notification keys are suppressed within the active service session.</p></article>
+              </div>
+              <div class="automation-flow" aria-label="Personal Secretary advisory flow"><span>Living OS / ULE</span><i>→</i><span>Synthesis</span><i>→</i><span>Safety Check</span><i>→</i><span>Recommendation</span><i>→</i><span>User Decision</span></div>
+              <p class="integration-note">Daily Briefing · Weekly Review · Monthly Review · Smart Reminder · Recommendation Engine · Priority Manager · Decision Support · Notification Manager</p>
             </section>
 
             <section class="ecosystem-section connectivity-section" id="connectivity">
@@ -288,11 +313,13 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <div class="registry-row"><span>Enhancement Capability</span><b>v1.0.0 · STABLE</b></div>
                   <div class="registry-row"><span>Automation Capability</span><b>v1.0.0 · STABLE</b></div>
                   <div class="registry-row"><span>Collaboration &amp; Connectivity</span><b>v1.0.0 · STABLE</b></div>
+                  <div class="registry-row"><span>Personal Secretary</span><b>v1.0.0 · STABLE</b></div>
                   <p>Capability identities and approved module scope are visible; runtime internals remain governed.</p>
                 </article>
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.6.0</span><b>PERSONAL SECRETARY</b></div>
                   <div class="registry-row"><span>v0.5.0</span><b>COLLABORATION &amp; CONNECTIVITY</b></div>
                   <div class="registry-row"><span>v0.4.3</span><b>AUTOMATION CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.3.3</span><b>ENHANCEMENT CAPABILITY</b></div>
