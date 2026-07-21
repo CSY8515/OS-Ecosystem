@@ -1,6 +1,6 @@
 # Ecosystem Rules
 
-Version: v0.4.4
+Version: v0.5.0
 
 1. Projects remain independently deployable.
 2. External navigation uses direct public URLs.

@@ -1,5 +1,14 @@
 # OS Ecosystem Roadmap
 
+## v0.5.0 - Collaboration & Connectivity Capability
+
+- [x] Approve project-neutral connector and exchange architecture.
+- [x] Implement registry, contracts, import/export, transformation, messaging, sync, health, failures, and execution records.
+- [x] Integrate explicit Safety, Enhancement, and Automation gateways.
+- [x] Add in-memory/fake-provider tests without external credentials.
+- [x] Register the capability and expose a clearly labeled launcher status view.
+- [x] Prepare central documentation and release evidence.
+
 ## v0.4.4 - Documentation Structure Standardization
 
 - [x] Establish docs as the authoritative documentation root.

@@ -1,6 +1,6 @@
 # Ecosystem Constitution
 
-Version: v0.4.4
+Version: v0.5.0
 
 OS Ecosystem owns shared governance, architecture, registry, and release standards without owning project business logic, data, or runtime decisions.
 

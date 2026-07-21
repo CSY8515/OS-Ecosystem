@@ -1,6 +1,6 @@
 # Ecosystem Principles
 
-Version: v0.4.4
+Version: v0.5.0
 
 - Autonomy
 - Explicit integration

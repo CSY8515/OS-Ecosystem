@@ -2,11 +2,11 @@
 
 OS Ecosystem is the governance, architecture, registry, capability, and navigation layer that connects independent projects without merging their runtimes.
 
-**Current version:** v0.4.4
-**Release type:** Documentation Structure Standardization Patch
+**Current version:** v0.5.0
+**Release type:** Collaboration & Connectivity Capability Release
 **Status:** Stable
 **Projects:** Living OS, Universal Learning Engine
-**Capabilities:** Safety, Enhancement, Automation
+**Capabilities:** Safety, Enhancement, Automation, Collaboration & Connectivity
 **Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
 
 ## Product contract
@@ -16,7 +16,7 @@ OS Ecosystem is the governance, architecture, registry, capability, and navigati
 - OS ECOSYSTEM remains the visual center, with independent projects presented as surrounding nodes.
 - Project nodes open each project's public Streamlit UI in a new browser tab.
 - Governance, architecture, and registry identities are visible while databases, runtimes, credentials, and operational internals remain hidden.
-- Living OS, Universal Learning Engine, Safety, Enhancement, and Automation keep independent ownership and release boundaries.
+- Living OS, Universal Learning Engine, Safety, Enhancement, Automation, and Collaboration & Connectivity keep independent ownership and release boundaries.
 
 ## Run locally
 
@@ -32,7 +32,7 @@ All authoritative design and lifecycle documents are managed below [docs](./docs
 - [Architecture](./docs/architecture/ARCHITECTURE.md): architecture, master design, structure, and roadmap
 - [Governance](./docs/governance/CONSTITUTION.md): constitution, rules, principles, standards, policies, decisions, and conventions
 - [Registry](./docs/registry/PROJECT_REGISTRY.md): projects, capabilities, versions, and releases
-- [Release](./docs/release/RELEASE_NOTES_v0.4.4.md): release notes, version history, and migration notes
+- [Release](./docs/release/RELEASE_NOTES_v0.5.0.md): release notes, version history, and migration notes
 - [Capabilities](./docs/capabilities/README.md): the common documentation rule and capability-specific contracts
 - [VERSION](./VERSION): current repository release identity
 
@@ -41,7 +41,7 @@ All authoritative design and lifecycle documents are managed below [docs](./docs
 - app.py and requirements.txt define the Streamlit launcher runtime.
 - tests contains ecosystem and documentation contract checks.
 - docs contains every authoritative design, governance, registry, release, and capability document.
-- Safety-Capability, Enhancement-Capability, and Automation-Capability contain independent capability code and local operational READMEs.
+- Safety-Capability, Enhancement-Capability, Automation-Capability, and Collaboration-Connectivity-Capability contain independent capability code and local operational READMEs.
 - Living-OS and Universal-Learning-Engine remain independent connected project workspaces and are not imported by the launcher.
 
 See the complete [repository structure](./docs/architecture/STRUCTURE.md).

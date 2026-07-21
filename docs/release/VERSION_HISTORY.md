@@ -1,5 +1,8 @@
 # OS Ecosystem Version History
 
+## v0.5.0
+Added Collaboration & Connectivity Capability v1.0.0, including governed provider-neutral connector, exchange, messaging, synchronization, health, and execution contracts.
+
 ## v0.4.4
 Standardized authoritative documentation under docs/ without runtime changes.
 

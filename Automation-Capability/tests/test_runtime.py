@@ -1,4 +1,5 @@
 import unittest
+from dataclasses import dataclass
 
 from automation_capability import AutomationExecutionContext, AutomationRequest, HealthStatus, StaticEnhancementGateway, create_default_runtime
 
@@ -41,6 +42,22 @@ class RuntimeTests(unittest.TestCase):
             self.assertTrue(approved.success)
             self.assertEqual(approved.details["status"], "EXECUTED")
             self.assertEqual(runtime.repository.count(), 2)
+
+    def test_approved_auto_execution_can_invoke_collaboration_gateway(self):
+        @dataclass
+        class Response:
+            success: bool = True
+            error_code: str | None = None
+            def to_dict(self): return {"success": self.success, "status": "SUCCESS"}
+        class Gateway:
+            def __init__(self): self.requests = []
+            def execute_connector_request(self, connector_request): self.requests.append(connector_request); return Response()
+        gateway = Gateway()
+        with create_default_runtime(collaboration_gateway=gateway) as runtime:
+            result = self.execute(runtime, "auto_execute", {"task": {"name": "sync"}, "approval": {"approved": True}, "connector_request": {"connector_id": "demo"}})
+            self.assertTrue(result.success)
+            self.assertEqual(gateway.requests, [{"connector_id": "demo"}])
+            self.assertTrue(result.details["connector_response"]["success"])
 
     def test_auto_decision_consumes_enhancement_insights(self):
         gateway = StaticEnhancementGateway({"patterns": ["morning"], "rule": "prefer-focus"})

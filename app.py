@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.4.4 unified launcher and capability catalog."""
+"""OS Ecosystem v0.5.0 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.4.4"
+VERSION = "0.5.0"
 
 
 @dataclass(frozen=True)
@@ -106,6 +106,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
             <a href="#projects">Projects</a>
             <a href="#capability">Capability</a>
             <a href="#automation">Automation</a>
+            <a href="#connectivity">Connectivity</a>
             <a href="#governance">Governance</a>
             <a href="#architecture">Architecture</a>
             <a href="#registry">Registry</a>
@@ -152,7 +153,29 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <div class="module-list"><span>Workflow</span><span>Scheduler</span><span>Trigger</span><span>Routine</span><span>Auto Execution</span><span>Auto Decision</span></div>
                   <a class="capability-link" href="#automation">Open capability overview</a>
                 </article>
+                <article class="ecosystem-item capability-item connectivity-item">
+                  <span class="item-index">CAP-04 · NEW IN v0.5.0</span>
+                  <h3>Collaboration &amp; Connectivity</h3>
+                  <p>Common connector, exchange, messaging, synchronization, health, and failure contracts.</p>
+                  <div class="module-list"><span>Registry</span><span>Contracts</span><span>Import / Export</span><span>Messaging</span><span>Sync</span><span>Health</span></div>
+                  <a class="capability-link" href="#connectivity">Open capability status</a>
+                </article>
               </div>
+            </section>
+
+            <section class="ecosystem-section connectivity-section" id="connectivity">
+              <header class="section-heading">
+                <span class="section-kicker">01B / COLLABORATION &amp; CONNECTIVITY</span>
+                <h2>Collaboration &amp; Connectivity</h2>
+                <p>A provider-neutral exchange foundation. Current status is an explicit local in-memory demonstration, not a live external connection.</p>
+              </header>
+              <div class="ecosystem-grid connectivity-grid">
+                <article class="ecosystem-item"><span class="item-index">CAPABILITY VERSION</span><h3>v1.0.0</h3><p>Stable public contracts for connector execution and cross-project exchange.</p></article>
+                <article class="ecosystem-item"><span class="item-index">REGISTERED CONNECTORS</span><h3>1 Demo</h3><p>One in-memory connector; Available: 1 · Degraded: 0.</p></article>
+                <article class="ecosystem-item"><span class="item-index">LAST HEALTH CHECK</span><h3>Healthy</h3><p>Local deterministic check. No credentials or external services are contacted.</p></article>
+                <article class="ecosystem-item"><span class="item-index">RECENT CONNECTION RESULT</span><h3>Demo Ready</h3><p>The runtime is ready for governed requests through explicit provider adapters.</p></article>
+              </div>
+              <p class="integration-note">Safety validation → Connector execution → Sanitized record → Enhancement analysis · Automation may invoke the same request contract.</p>
             </section>
 
             <section class="ecosystem-section automation-section" id="automation">
@@ -240,7 +263,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-05</span>
                   <h3>Capability Architecture</h3>
-                  <p>Safety, Enhancement, and Automation remain independent foundations above project runtimes and extend through shared public contracts.</p>
+                  <p>Safety, Enhancement, Automation, and Collaboration &amp; Connectivity remain independent foundations above project runtimes and extend through shared public contracts.</p>
                 </article>
               </div>
             </section>
@@ -264,11 +287,13 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <div class="registry-row"><span>Safety Capability</span><b>v1.0.0 · INTERNAL</b></div>
                   <div class="registry-row"><span>Enhancement Capability</span><b>v1.0.0 · STABLE</b></div>
                   <div class="registry-row"><span>Automation Capability</span><b>v1.0.0 · STABLE</b></div>
+                  <div class="registry-row"><span>Collaboration &amp; Connectivity</span><b>v1.0.0 · STABLE</b></div>
                   <p>Capability identities and approved module scope are visible; runtime internals remain governed.</p>
                 </article>
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.5.0</span><b>COLLABORATION &amp; CONNECTIVITY</b></div>
                   <div class="registry-row"><span>v0.4.3</span><b>AUTOMATION CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.3.3</span><b>ENHANCEMENT CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.2.3</span><b>ECOSYSTEM LAYER</b></div>
@@ -317,8 +342,9 @@ def apply_theme() -> None:
         .section-heading p { grid-column:2; margin:12px 0 0; color:#7f9294; font-size:12px; }
         .ecosystem-grid { display:grid; gap:1px; padding:1px; background:rgba(143,225,219,.09); }
         .governance-grid { grid-template-columns:repeat(5,1fr); }
-        .capability-grid { grid-template-columns:repeat(3,1fr); }
+        .capability-grid { grid-template-columns:repeat(4,1fr); }
         .automation-grid { grid-template-columns:repeat(3,1fr); }
+        .connectivity-grid { grid-template-columns:repeat(4,1fr); }
         .architecture-grid { grid-template-columns:repeat(5,1fr); }
         .registry-grid { grid-template-columns:repeat(3,1fr); }
         .ecosystem-item { min-height:210px; padding:27px; background:#091415; }
@@ -382,7 +408,7 @@ def apply_theme() -> None:
           .section-heading { grid-template-columns:1fr; }
           .section-heading h2 { margin-top:18px; }
           .section-heading p { grid-column:1; }
-          .capability-grid,.automation-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
+          .capability-grid,.automation-grid,.connectivity-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
           .automation-flow { flex-wrap:wrap; justify-content:center; }
           .ecosystem-item { min-height:auto; }
         }

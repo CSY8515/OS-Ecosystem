@@ -1,6 +1,6 @@
 # Project Registry
 
-Version: v0.4.4
+Version: v0.5.0
 
 | Project | Version | Status | Application |
 | --- | --- | --- | --- |

@@ -49,6 +49,12 @@ class EnhancementGateway(Protocol):
     def insights(self, context: AutomationExecutionContext) -> dict[str, Any]: ...
 
 
+class CollaborationGateway(Protocol):
+    """Optional adapter implemented by CollaborationConnectivityService."""
+
+    def execute_connector_request(self, request: Any) -> Any: ...
+
+
 class NullEnhancementGateway:
     def insights(self, context: AutomationExecutionContext) -> dict[str, Any]:
         return {}
@@ -289,11 +295,12 @@ class SQLiteExecutionRepository:
 
 
 class AutomationRuntime:
-    def __init__(self, *, registry: ComponentRegistry | None = None, repository: SQLiteExecutionRepository | None = None, safety_gateway: SafetyGateway | None = None, enhancement_gateway: EnhancementGateway | None = None) -> None:
+    def __init__(self, *, registry: ComponentRegistry | None = None, repository: SQLiteExecutionRepository | None = None, safety_gateway: SafetyGateway | None = None, enhancement_gateway: EnhancementGateway | None = None, collaboration_gateway: CollaborationGateway | None = None) -> None:
         self.registry = registry or ComponentRegistry()
         self.repository = repository or SQLiteExecutionRepository()
         self.safety_gateway = safety_gateway or DefaultSafetyGateway()
         self.enhancement_gateway = enhancement_gateway or NullEnhancementGateway()
+        self.collaboration_gateway = collaboration_gateway
 
     def execute(self, request: AutomationRequest) -> AutomationResult:
         if not isinstance(request, AutomationRequest):
@@ -323,6 +330,17 @@ class AutomationRuntime:
             enriched = replace(context, metadata={**context.metadata, "enhancement_inputs": insights})
             details = component.execute(enriched)
             stages.append("Execution")
+            connector_request = context.payload.get("connector_request") if context.action == "auto_execute" else None
+            if connector_request is not None:
+                if self.collaboration_gateway is None:
+                    raise InputValidationError("connector_request requires a collaboration_gateway")
+                connector_response = self.collaboration_gateway.execute_connector_request(connector_request)
+                if not hasattr(connector_response, "success"):
+                    raise InputValidationError("collaboration gateway returned an invalid response")
+                details["connector_response"] = connector_response.to_dict() if hasattr(connector_response, "to_dict") else {"success": connector_response.success}
+                if not connector_response.success:
+                    error_code = getattr(connector_response, "error_code", "CONNECTION_FAILED")
+                    raise AutomationCapabilityError(ErrorCode.EXECUTION_FAILED, f"Connector execution failed: {error_code}")
             component.validate_output(details, enriched)
             stages.append("Logging")
             result = AutomationResult(True, context.request_id, component_id, context.action, "SUCCESS", None, "Automation execution completed", perf_counter() - started, CAPABILITY_VERSION, tuple(stages), details=details)
@@ -355,8 +373,8 @@ class AutomationRuntime:
 BUILTIN_COMPONENTS = (WorkflowComponent, SchedulerComponent, TriggerComponent, RoutineComponent, AutoExecutionComponent, AutoDecisionComponent)
 
 
-def create_default_runtime(*, repository: SQLiteExecutionRepository | None = None, safety_gateway: SafetyGateway | None = None, enhancement_gateway: EnhancementGateway | None = None) -> AutomationRuntime:
-    runtime = AutomationRuntime(repository=repository, safety_gateway=safety_gateway, enhancement_gateway=enhancement_gateway)
+def create_default_runtime(*, repository: SQLiteExecutionRepository | None = None, safety_gateway: SafetyGateway | None = None, enhancement_gateway: EnhancementGateway | None = None, collaboration_gateway: CollaborationGateway | None = None) -> AutomationRuntime:
+    runtime = AutomationRuntime(repository=repository, safety_gateway=safety_gateway, enhancement_gateway=enhancement_gateway, collaboration_gateway=collaboration_gateway)
     for component_type in BUILTIN_COMPONENTS:
         runtime.registry.register(component_type())
     return runtime
@@ -366,5 +384,5 @@ __all__ = [
     "CAPABILITY_VERSION", "AutomationExecutionContext", "AutomationRequest", "AutomationResult",
     "AutomationRuntime", "ComponentRegistry", "SQLiteExecutionRepository", "SafetyDecision",
     "SafetyGateway", "DefaultSafetyGateway", "EnhancementGateway", "NullEnhancementGateway",
-    "StaticEnhancementGateway", "HealthReport", "HealthStatus", "create_default_runtime",
+    "StaticEnhancementGateway", "CollaborationGateway", "HealthReport", "HealthStatus", "create_default_runtime",
 ]

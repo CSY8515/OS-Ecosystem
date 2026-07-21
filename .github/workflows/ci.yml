@@ -22,7 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt pytest
-          python -m pip install -e ./Safety-Capability -e ./Enhancement-Capability -e ./Automation-Capability
+          python -m pip install -e ./Safety-Capability -e ./Enhancement-Capability -e ./Automation-Capability -e ./Collaboration-Connectivity-Capability
       - name: Ecosystem tests
         run: python -m unittest discover -s tests -v
       - name: Safety tests
@@ -31,3 +31,5 @@ jobs:
         run: python -m pytest Enhancement-Capability/tests -q
       - name: Automation tests
         run: python -m pytest Automation-Capability/tests -q
+      - name: Collaboration and Connectivity tests
+        run: python -m pytest Collaboration-Connectivity-Capability/tests -q

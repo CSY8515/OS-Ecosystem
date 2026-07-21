@@ -1,6 +1,6 @@
 # Capability Documentation Standard
 
-Version: v0.4.4
+Version: v0.5.0
 
 Every Capability uses docs/capabilities/<capability>/ as its authoritative documentation root.
 

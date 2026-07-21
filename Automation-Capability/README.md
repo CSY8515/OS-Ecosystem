@@ -1,5 +1,7 @@
 # Automation Capability v1.0
 
+Automation also accepts an optional Collaboration & Connectivity gateway for approved connector requests; see the central integration contract.
+
 Automation Capability is the OS Ecosystem's independent shared platform for Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision. Living OS, Universal Learning Engine, and future projects use one project-neutral request/result contract.
 
 The package mirrors the established Safety and Enhancement boundaries: `core`, `interfaces`, `registry`, `execution`, `database`, `components`, `tests`, and `docs`.

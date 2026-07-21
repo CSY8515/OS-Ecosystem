@@ -1,6 +1,6 @@
 # OS Ecosystem Structure
 
-Version: v0.4.4
+Version: v0.5.0
 
 ## Repository layout
 
@@ -14,6 +14,7 @@ Version: v0.4.4
 - Safety-Capability: independent Safety package and operational README
 - Enhancement-Capability: independent Enhancement package and operational README
 - Automation-Capability: independent Automation package and operational README
+- Collaboration-Connectivity-Capability: independent connection contracts, runtime, and operational README
 - Living-OS: independently owned connected project workspace
 - Universal-Learning-Engine: independently owned connected project workspace
 

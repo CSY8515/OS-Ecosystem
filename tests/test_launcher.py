@@ -1,13 +1,15 @@
 import os
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 import app
+from streamlit.testing.v1 import AppTest
 
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.4.4")
+        self.assertEqual(app.VERSION, "0.5.0")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()
@@ -58,7 +60,7 @@ class LauncherContractTests(unittest.TestCase):
             app.render_launcher(projects)
 
         markup = html_renderer.call_args.args[0]
-        for menu in ("Projects", "Capability", "Automation", "Governance", "Architecture", "Registry"):
+        for menu in ("Projects", "Capability", "Automation", "Connectivity", "Governance", "Architecture", "Registry"):
             self.assertIn(f">{menu}</a>", markup)
         for section_id in ("capability", "governance", "architecture", "registry"):
             self.assertIn(f'id="{section_id}"', markup)
@@ -101,6 +103,23 @@ class LauncherContractTests(unittest.TestCase):
             self.assertIn(stage, markup)
         self.assertIn("Automation Capability</span><b>v1.0.0 · STABLE", markup)
         self.assertIn("v0.4.3", markup)
+
+    def test_collaboration_connectivity_status_is_rendered_as_demo(self):
+        with patch.object(app.st, "html") as html_renderer:
+            app.render_launcher(app.get_projects())
+        markup = html_renderer.call_args.args[0]
+        self.assertIn('id="connectivity"', markup)
+        self.assertGreaterEqual(markup.count("Collaboration &amp; Connectivity"), 3)
+        for field in ("CAPABILITY VERSION", "REGISTERED CONNECTORS", "LAST HEALTH CHECK", "RECENT CONNECTION RESULT"):
+            self.assertIn(field, markup)
+        self.assertIn("in-memory connector", markup)
+        self.assertIn("v1.0.0 · STABLE", markup)
+        self.assertIn("v0.5.0", markup)
+
+    def test_streamlit_app_runs_without_exception(self):
+        app_test = AppTest.from_file(str(Path(app.__file__)), default_timeout=20)
+        app_test.run()
+        self.assertEqual(list(app_test.exception), [])
 
 if __name__ == "__main__":
     unittest.main()

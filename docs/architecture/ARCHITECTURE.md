@@ -1,6 +1,6 @@
 # OS Ecosystem Architecture
 
-Version: v0.4.4
+Version: v0.5.0
 
 ## Purpose
 
@@ -26,6 +26,12 @@ OS Ecosystem
         |-- Routine
         |-- Auto Execution
         `-- Auto Decision
+    `-- Collaboration & Connectivity v1.0.0
+        |-- Connector Registry and Contract
+        |-- Import / Export and Transformation
+        |-- Internal Messaging and Sync Foundation
+        |-- Health and Failure Handling
+        `-- Execution Records
 ```
 
 Capabilities are independent packages with common core, interface, registry, execution, database, component, test, and documentation boundaries. Projects consume their public contracts explicitly; capabilities do not import projects or own project data. New capabilities and components follow the same registration and extension path.
@@ -33,6 +39,10 @@ Capabilities are independent packages with common core, interface, registry, exe
 ## Automation integration
 
 Automation follows the governed flow `Validation -> Risk Check -> Approval -> Execution -> Logging`, with `Recovery` available after unexpected execution failures. Safety integration is an explicit gateway: denied or critical-risk work is blocked and Auto Execution requires user approval. Enhancement integration accepts advisory results from Analytics, Pattern Analysis, Optimization, and Rule Generation without transferring authority or data ownership.
+
+## Collaboration and connectivity integration
+
+Every connector request follows `Request -> Safety validation -> Provider execution -> Response validation -> Sanitized record`. Providers are replaceable behind a base contract and publish supported operations explicitly. Enhancement consumes aggregate success, latency, and failure evidence. Automation invokes the same governed service method and cannot bypass Safety. Project data schemas, credentials, and business transformations remain with their owners.
 
 ## Runtime flow
 

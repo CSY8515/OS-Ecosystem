@@ -1,6 +1,6 @@
 # OS Ecosystem Documentation
 
-Version: v0.4.4
+Version: v0.5.0
 
 This is the authoritative documentation root.
 
@@ -26,6 +26,7 @@ This is the authoritative documentation root.
 - [Release Registry](./registry/RELEASE_REGISTRY.md)
 
 ## Releases
+- [v0.5.0 Release Notes](./release/RELEASE_NOTES_v0.5.0.md)
 - [v0.4.4 Release Notes](./release/RELEASE_NOTES_v0.4.4.md)
 - [Version History](./release/VERSION_HISTORY.md)
 - [Migration Notes](./release/MIGRATION_NOTES_v0.4.4.md)
@@ -35,6 +36,7 @@ This is the authoritative documentation root.
 - [Safety](./capabilities/safety/README.md)
 - [Enhancement](./capabilities/enhancement/README.md)
 - [Automation](./capabilities/automation/README.md)
+- [Collaboration & Connectivity](./capabilities/collaboration-connectivity/README.md)
 
 ## Principles
 1. docs/ is the single source of truth.
