@@ -3,8 +3,9 @@
 OS Ecosystem is a focused launcher that connects independent projects without exposing their internal capabilities, databases, or runtimes.
 
 **Current version:** v0.2.1
-**Status:** Release candidate
+**Status:** Stable
 **Initial projects:** Living OS, Universal Learning Engine
+**Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
 
 ## Product contract
 

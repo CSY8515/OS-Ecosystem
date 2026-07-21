@@ -1,6 +1,6 @@
 # OS Ecosystem v0.2.1 Release Notes
 
-Status: Release candidate
+Status: Stable
 
 ## Included
 
@@ -27,9 +27,10 @@ Status: Release candidate
 - Living OS baseline: `v2.0.4`
 - Universal Learning Engine baseline: `v1.0.0`
 
-## Publication gates
+## Validation and publication
 
-- Automated tests must pass.
-- A Streamlit smoke test must reach a healthy state.
-- Both initial project production destinations must be connected.
-- GitHub release and Streamlit deployment remain pending until publication credentials are available.
+- Six automated launcher contract tests pass.
+- Streamlit AppTest completes without application exceptions.
+- The Streamlit deployment completed and its server reached the running state.
+- Living OS and Universal Learning Engine production destinations are connected.
+- Production URL: https://8javbq85jtappi6tkdhkt7g.streamlit.app/

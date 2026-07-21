@@ -10,8 +10,8 @@
 - [x] Approve the master design
 - [x] Implement the Streamlit launcher
 - [x] Add automated launcher tests
-- [ ] Publish the GitHub release
-- [ ] Deploy OS Ecosystem to Streamlit Community Cloud
+- [x] Publish the GitHub release
+- [x] Deploy OS Ecosystem to Streamlit Community Cloud
 - [x] Connect the Universal Learning Engine production URL
 
 ## v0.3.0 - Connection maturity
