@@ -1,4 +1,4 @@
-# OS Ecosystem v0.2.1 Release Notes
+# OS Ecosystem v0.2.2 Release Notes
 
 Status: Stable
 
@@ -23,7 +23,7 @@ Status: Stable
 ## Release identity
 
 - Repository: OS Ecosystem
-- Version and intended tag: `v0.2.1`
+- Version and intended tag: `v0.2.2`
 - Living OS baseline: `v2.0.4`
 - Universal Learning Engine baseline: `v1.0.0`
 

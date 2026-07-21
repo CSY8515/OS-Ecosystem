@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.2.1 — unified launcher for independent projects."""
+"""OS Ecosystem v0.2.2 — unified launcher for independent projects."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 
 
 @dataclass(frozen=True)
@@ -98,7 +98,7 @@ def _project_node(project: Project) -> str:
 
 def render_launcher(projects: tuple[Project, ...]) -> None:
     nodes = "".join(_project_node(project) for project in projects)
-    st.markdown(
+    st.html(
         f"""
         <main class="ecosystem-shell">
           <div class="ambient ambient-one"></div>
@@ -121,12 +121,11 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           </footer>
         </main>
         """,
-        unsafe_allow_html=True,
     )
 
 
 def apply_theme() -> None:
-    st.markdown(
+    st.html(
         """
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap');
@@ -184,7 +183,6 @@ def apply_theme() -> None:
         @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } }
         </style>
         """,
-        unsafe_allow_html=True,
     )
 
 

@@ -7,7 +7,7 @@ import app
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.2.1")
+        self.assertEqual(app.VERSION, "0.2.2")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()

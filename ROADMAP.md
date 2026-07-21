@@ -1,6 +1,6 @@
 # OS Ecosystem Roadmap
 
-## v0.2.1 - Connected launcher
+## v0.2.2 - Connected launcher
 
 - [x] Establish the OS Ecosystem repository
 - [x] Confirm the current version

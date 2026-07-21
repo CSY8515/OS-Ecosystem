@@ -1,6 +1,6 @@
 # OS Ecosystem Architecture
 
-Version: v0.2.1
+Version: v0.2.2
 
 ## Purpose
 
