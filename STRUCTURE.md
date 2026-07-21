@@ -1,6 +1,6 @@
 # OS Ecosystem Structure
 
-Version: v0.2.3
+Version: v0.3.3
 
 ```text
 OS-Ecosystem/
@@ -9,7 +9,8 @@ OS-Ecosystem/
 |   `-- secrets.toml.example        # destination configuration example
 |-- Living-OS/                      # independent connected project
 |-- Universal-Learning-Engine/      # independent connected project
-|-- Safety-Capability/              # internal capability; not launcher UI
+|-- Safety-Capability/              # independent safety capability; surfaced in Capability UI
+|-- Enhancement-Capability/         # independent shared learning and optimization capability
 |-- tests/
 |   `-- test_launcher.py            # launcher contract tests
 |-- app.py                          # Streamlit launcher entry point

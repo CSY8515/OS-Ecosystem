@@ -1,5 +1,16 @@
 # OS Ecosystem Roadmap
 
+## v0.3.3 - Enhancement Capability
+
+- [x] Approve the Enhancement Capability architecture.
+- [x] Preserve the Safety Capability structure and extension model.
+- [x] Implement Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation.
+- [x] Add common public contracts, registry, isolated execution, records, and health.
+- [x] Add the Capability menu and Enhancement UI section.
+- [x] Register Enhancement in Architecture and Registry.
+- [x] Add package and ecosystem contract tests.
+- [x] Publish the v0.3.3 release and deploy the Streamlit application.
+
 ## v0.2.3 - Ecosystem layer
 
 - [x] Establish the OS Ecosystem repository
@@ -19,7 +30,7 @@
 - [x] Publish the architecture strategy set
 - [x] Publish project, capability, and release registries
 
-## v0.3.0 - Connection maturity
+## Next - Connection maturity
 
 - Add a documented project onboarding contract.
 - Add non-invasive availability signaling without exposing internal health data.

@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.2.3 — unified launcher for independent projects."""
+"""OS Ecosystem v0.3.3 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.2.3"
+VERSION = "0.3.3"
 
 
 @dataclass(frozen=True)
@@ -104,6 +104,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           <div id="projects" class="anchor-target"></div>
           <nav class="ecosystem-nav" aria-label="Ecosystem menu">
             <a href="#projects">Projects</a>
+            <a href="#capability">Capability</a>
             <a href="#governance">Governance</a>
             <a href="#architecture">Architecture</a>
             <a href="#registry">Registry</a>
@@ -124,9 +125,31 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           </section>
 
           <div class="ecosystem-layers">
+            <section class="ecosystem-section" id="capability">
+              <header class="section-heading">
+                <span class="section-kicker">01 / CAPABILITY</span>
+                <h2>Capability</h2>
+                <p>Shared, independent foundations used consistently across every ecosystem project.</p>
+              </header>
+              <div class="ecosystem-grid capability-grid">
+                <article class="ecosystem-item capability-item">
+                  <span class="item-index">CAP-01 · STABLE</span>
+                  <h3>Safety Capability</h3>
+                  <p>Common validation, controlled execution, failure isolation, and safety records.</p>
+                  <div class="module-list"><span>Validation</span><span>Execution</span><span>Health</span></div>
+                </article>
+                <article class="ecosystem-item capability-item enhancement-item">
+                  <span class="item-index">CAP-02 · NEW IN v0.3.3</span>
+                  <h3>Enhancement Capability</h3>
+                  <p>The shared analysis, learning, and continuous-improvement engine for all projects.</p>
+                  <div class="module-list"><span>Analytics</span><span>Learning</span><span>Pattern Analysis</span><span>Knowledge Management</span><span>Optimization</span><span>Rule Generation</span></div>
+                </article>
+              </div>
+            </section>
+
             <section class="ecosystem-section" id="governance">
               <header class="section-heading">
-                <span class="section-kicker">01 / GOVERNANCE</span>
+                <span class="section-kicker">02 / GOVERNANCE</span>
                 <h2>Governance</h2>
                 <p>The shared authority layer for independent systems.</p>
               </header>
@@ -161,7 +184,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
 
             <section class="ecosystem-section" id="architecture">
               <header class="section-heading">
-                <span class="section-kicker">02 / ARCHITECTURE</span>
+                <span class="section-kicker">03 / ARCHITECTURE</span>
                 <h2>Architecture</h2>
                 <p>The structural map for projects that remain independent by design.</p>
               </header>
@@ -186,12 +209,17 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <h3>Roadmap</h3>
                   <p>Expand governance and registry depth before onboarding additional independent projects.</p>
                 </article>
+                <article class="ecosystem-item">
+                  <span class="item-index">ARC-05</span>
+                  <h3>Capability Architecture</h3>
+                  <p>Safety and Enhancement remain independent foundations above project runtimes and extend through shared public contracts.</p>
+                </article>
               </div>
             </section>
 
             <section class="ecosystem-section" id="registry">
               <header class="section-heading">
-                <span class="section-kicker">03 / REGISTRY</span>
+                <span class="section-kicker">04 / REGISTRY</span>
                 <h2>Registry</h2>
                 <p>The authoritative index of ecosystem membership and releases.</p>
               </header>
@@ -206,11 +234,13 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                   <span class="item-index">REG-02</span>
                   <h3>Capability Registry</h3>
                   <div class="registry-row"><span>Safety Capability</span><b>v1.0.0 · INTERNAL</b></div>
-                  <p>Capability details remain governed and hidden from project navigation.</p>
+                  <div class="registry-row"><span>Enhancement Capability</span><b>v1.0.0 · STABLE</b></div>
+                  <p>Capability identities and approved module scope are visible; runtime internals remain governed.</p>
                 </article>
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.3.3</span><b>ENHANCEMENT CAPABILITY</b></div>
                   <div class="registry-row"><span>v0.2.3</span><b>ECOSYSTEM LAYER</b></div>
                   <div class="registry-row"><span>v0.2.2</span><b>UI STABILITY</b></div>
                   <div class="registry-row"><span>v0.2.1</span><b>PROJECT CONNECTIONS</b></div>
@@ -257,7 +287,8 @@ def apply_theme() -> None:
         .section-heading p { grid-column:2; margin:12px 0 0; color:#7f9294; font-size:12px; }
         .ecosystem-grid { display:grid; gap:1px; padding:1px; background:rgba(143,225,219,.09); }
         .governance-grid { grid-template-columns:repeat(5,1fr); }
-        .architecture-grid { grid-template-columns:repeat(4,1fr); }
+        .capability-grid { grid-template-columns:1fr 2fr; }
+        .architecture-grid { grid-template-columns:repeat(5,1fr); }
         .registry-grid { grid-template-columns:repeat(3,1fr); }
         .ecosystem-item { min-height:210px; padding:27px; background:#091415; }
         .ecosystem-item h3 { margin:34px 0 13px; font:600 16px/1.25 Manrope,sans-serif; letter-spacing:-.025em; }
@@ -267,6 +298,9 @@ def apply_theme() -> None:
         .registry-row:first-of-type { margin-top:24px; }
         .registry-row b { color:var(--cyan); font-size:8px; letter-spacing:.08em; font-weight:500; text-align:right; }
         .registry-item p { margin-top:18px; }
+        .enhancement-item { background:linear-gradient(135deg,#0b1b1c,#091415); box-shadow:inset 0 2px 0 rgba(143,225,219,.45); }
+        .module-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:22px; }
+        .module-list span { padding:6px 8px; border:1px solid rgba(143,225,219,.12); color:#9eb2b3; font-size:8px; letter-spacing:.06em; text-transform:uppercase; }
         .ecosystem-stage { min-height:calc(100vh - 78px); position:relative; display:grid; place-items:center; }
         .ecosystem-core { width:330px; height:330px; border:1px solid rgba(143,225,219,.24); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:3; background:radial-gradient(circle at 50% 40%, rgba(22,55,55,.96), rgba(7,16,17,.97) 67%); box-shadow:0 0 0 22px rgba(143,225,219,.025), 0 0 0 23px rgba(143,225,219,.07), 0 34px 90px rgba(0,0,0,.45); }
         .ecosystem-core:before,.ecosystem-core:after { content:""; position:absolute; border-radius:50%; border:1px dashed rgba(143,225,219,.11); inset:-55px; animation:spin 45s linear infinite; }
@@ -311,7 +345,7 @@ def apply_theme() -> None:
           .section-heading { grid-template-columns:1fr; }
           .section-heading h2 { margin-top:18px; }
           .section-heading p { grid-column:1; }
-          .governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
+          .capability-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
           .ecosystem-item { min-height:auto; }
         }
         @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } }

@@ -1,8 +1,14 @@
-# OS Ecosystem v0.2.3 Release Notes
+# OS Ecosystem v0.3.3 Release Notes
 
 Status: Stable
 
 ## Included
+
+- Independent Enhancement Capability v1.0.0 with the same structural boundaries as Safety Capability.
+- Shared Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation modules.
+- Stable request/result, registry, health, isolated-execution, and SQLite record contracts.
+- Capability menu and dedicated UI section while preserving the existing visual system.
+- Enhancement entries in Architecture, Capability Registry, and release history.
 
 - A dedicated Streamlit ecosystem shell with no sidebar or conventional dashboard.
 - Projects, Governance, Architecture, and Registry navigation.
@@ -23,18 +29,18 @@ Status: Stable
 - Connected projects remain independently owned, versioned, tested, and deployed.
 - The launcher does not import, execute, or persist project internals.
 - Registries expose approved identity and version metadata only; database, runtime, secret, health, and implementation details remain hidden.
-- Safety Capability remains an internal repository component and is not a launcher node.
+- Safety and Enhancement remain independent Capability-layer packages, not project launcher nodes.
 
 ## Release identity
 
 - Repository: OS Ecosystem
-- Version and intended tag: v0.2.3
+- Version and intended tag: v0.3.3
 - Living OS baseline: `v2.0.4`
 - Universal Learning Engine baseline: `v1.0.0`
 
 ## Validation and publication
 
-- Eight automated ecosystem contract tests pass.
+- Ecosystem launcher and independent Capability contract tests pass.
 - Streamlit AppTest completes without application exceptions.
 - The Streamlit deployment completed and its server reached the running state.
 - Living OS and Universal Learning Engine production destinations are connected.

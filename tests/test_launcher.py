@@ -7,7 +7,7 @@ import app
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.2.3")
+        self.assertEqual(app.VERSION, "0.3.3")
 
     def test_initial_catalog_contains_only_public_projects(self):
         projects = app.get_projects()
@@ -58,9 +58,9 @@ class LauncherContractTests(unittest.TestCase):
             app.render_launcher(projects)
 
         markup = html_renderer.call_args.args[0]
-        for menu in ("Projects", "Governance", "Architecture", "Registry"):
+        for menu in ("Projects", "Capability", "Governance", "Architecture", "Registry"):
             self.assertIn(f">{menu}</a>", markup)
-        for section_id in ("governance", "architecture", "registry"):
+        for section_id in ("capability", "governance", "architecture", "registry"):
             self.assertIn(f'id="{section_id}"', markup)
         for item in (
             "Ecosystem Constitution",
@@ -72,11 +72,22 @@ class LauncherContractTests(unittest.TestCase):
             "Repository Strategy",
             "Integration Strategy",
             "Roadmap",
+            "Capability Architecture",
             "Project Registry",
             "Capability Registry",
             "Release History",
         ):
             self.assertIn(item, markup)
+
+    def test_enhancement_capability_modules_and_registry_are_rendered(self):
+        with patch.object(app.st, "html") as html_renderer:
+            app.render_launcher(app.get_projects())
+        markup = html_renderer.call_args.args[0]
+        self.assertGreaterEqual(markup.count("Enhancement Capability"), 2)
+        for module in ("Analytics", "Learning", "Pattern Analysis", "Knowledge Management", "Optimization", "Rule Generation"):
+            self.assertIn(module, markup)
+        self.assertIn("v1.0.0 · STABLE", markup)
+        self.assertIn("v0.3.3", markup)
 
 if __name__ == "__main__":
     unittest.main()
