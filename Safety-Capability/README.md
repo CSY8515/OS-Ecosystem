@@ -91,9 +91,9 @@ The suite covers normal runtime execution, context and result contracts, registr
 
 ## Deployment
 
-Safety Capability is not a Streamlit or service deployment. Deployment means publishing immutable wheel and source artifacts in a namespaced GitHub Release, installing the wheel in a clean supported Python environment, and verifying import, runtime execution, persistence, controlled errors, and health. See `docs/DEPLOYMENT_CONTRACT.md`.
+Safety Capability is not a Streamlit or service deployment. Deployment means publishing immutable wheel and source artifacts in a namespaced GitHub Release, installing the wheel in a clean supported Python environment, and verifying import, runtime execution, persistence, controlled errors, and health. See `../docs/capabilities/safety/DEPLOYMENT_CONTRACT.md`.
 
-Runtime rollback is not a v1.0 Core function. Operational deployment rollback selects a previously verified artifact and OS Ecosystem manifest entry. See `docs/RECOVERY_POLICY.md`.
+Runtime rollback is not a v1.0 Core function. Operational deployment rollback selects a previously verified artifact and OS Ecosystem manifest entry. See `../docs/capabilities/safety/RECOVERY_POLICY.md`.
 
 ## Project structure
 
@@ -114,17 +114,19 @@ Safety-Capability/
 
 ## Documentation
 
-- `docs/ARCHITECTURE.md`: ecosystem position, flow, dependencies, boundaries
-- `docs/MASTER_DESIGN.md`: goals, model, selection, failures, evolution
-- `docs/INTERFACE_CONTRACT.md`: component obligations
-- `docs/MODULE_INTEGRATION_CONTRACT.md`: allowed future module boundary
-- `docs/EXECUTION_DATABASE_CONTRACT.md`: storage adapter contract
-- `docs/PUBLIC_API.md`: consumer, extension, and private boundaries
-- `docs/RECOVERY_POLICY.md`: runtime recovery and deployment rollback responsibilities
-- `docs/DEPLOYMENT_CONTRACT.md`: artifact and clean-install release gate
-- `docs/ARCHITECTURE_RELEASE_GATE.md`: v1.0 Architecture Gate decision and evidence
-- `docs/ROADMAP.md`: candidate future phases
-- `docs/RELEASE_CHECKLIST.md`: local release-readiness checks
+See the [Safety documentation index](../docs/capabilities/safety/README.md).
+
+- `../docs/capabilities/safety/ARCHITECTURE.md`: ecosystem position, flow, dependencies, boundaries
+- `../docs/capabilities/safety/MASTER_DESIGN.md`: goals, model, selection, failures, evolution
+- `../docs/capabilities/safety/INTERFACE_CONTRACT.md`: component obligations
+- `../docs/capabilities/safety/MODULE_INTEGRATION_CONTRACT.md`: allowed future module boundary
+- `../docs/capabilities/safety/EXECUTION_DATABASE_CONTRACT.md`: storage adapter contract
+- `../docs/capabilities/safety/PUBLIC_API.md`: consumer, extension, and private boundaries
+- `../docs/capabilities/safety/RECOVERY_POLICY.md`: runtime recovery and deployment rollback responsibilities
+- `../docs/capabilities/safety/DEPLOYMENT_CONTRACT.md`: artifact and clean-install release gate
+- `../docs/capabilities/safety/ARCHITECTURE_RELEASE_GATE.md`: v1.0 Architecture Gate decision and evidence
+- `../docs/capabilities/safety/ROADMAP.md`: candidate future phases
+- `../docs/capabilities/safety/RELEASE_CHECKLIST.md`: local release-readiness checks
 
 ## Limitations
 
@@ -134,4 +136,4 @@ There is intentionally no direct Living OS, Universal Learning Engine, Investmen
 
 ## Roadmap
 
-Likely next steps are richer routing/configuration and observability, followed by opt-in recovery strategies and asynchronous execution. Real module adapters belong to a separately approved integration phase. See `docs/ROADMAP.md`.
+Likely next steps are richer routing/configuration and observability, followed by opt-in recovery strategies and asynchronous execution. Real module adapters belong to a separately approved integration phase. See `../docs/capabilities/safety/ROADMAP.md`.

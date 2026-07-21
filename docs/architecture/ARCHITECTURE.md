@@ -1,6 +1,6 @@
 # OS Ecosystem Architecture
 
-Version: v0.4.3
+Version: v0.4.4
 
 ## Purpose
 
@@ -81,3 +81,7 @@ Living OS and Universal Learning Engine retain their own UI, source boundaries, 
 ## Deployment
 
 OS Ecosystem is deployed as its own Streamlit application. Each project is deployed independently, and its production URL is supplied to the launcher through deployment configuration.
+
+## Documentation authority
+
+Architecture decisions are maintained in docs/architecture. Governance constraints, registry identities, release evidence, and capability contracts are maintained in their matching docs categories. Package-local READMEs are operational entry points and do not replace these authoritative documents.

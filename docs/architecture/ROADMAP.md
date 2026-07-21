@@ -1,5 +1,13 @@
 # OS Ecosystem Roadmap
 
+## v0.4.4 - Documentation Structure Standardization
+
+- [x] Establish docs as the authoritative documentation root.
+- [x] Standardize Architecture, Governance, Registry, Release, and Capability categories.
+- [x] Move existing design and capability documents without changing runtime behavior.
+- [x] Update README and cross-document links.
+- [x] Add automated structure, link, and regression validation.
+- [x] Publish the v0.4.4 patch and verify the production deployment.
 ## v0.4.3 - Automation Capability
 
 - [x] Approve the independent Automation Capability architecture.

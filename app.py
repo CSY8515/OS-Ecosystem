@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.4.3 unified launcher and capability catalog."""
+"""OS Ecosystem v0.4.4 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.4.3"
+VERSION = "0.4.4"
 
 
 @dataclass(frozen=True)

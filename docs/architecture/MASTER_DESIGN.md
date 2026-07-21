@@ -1,6 +1,6 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.4.3
+Canonical version: v0.4.4
 
 ## Product statement
 
@@ -63,3 +63,7 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 - Missing or invalid destinations cannot become unsafe links.
 - Layout remains usable on mobile and with reduced motion.
 - Capability registry identity may be shown, but databases, runtimes, credentials, and implementation details remain hidden.
+
+## Documentation management
+
+All authoritative design, governance, registry, release, and capability documents are managed under docs. Documentation placement and links are part of the repository contract; documentation-only patches must preserve the runtime and visual product contract.

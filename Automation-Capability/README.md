@@ -19,3 +19,6 @@ Auto Execution uses an explicit Safety gateway and requires approval. Auto Decis
 
 Run tests with `python -m pytest` from this directory.
 
+## Documentation
+
+Authoritative architecture, integration, release, and change documents are indexed in [Automation documentation](../docs/capabilities/automation/README.md).

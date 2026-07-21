@@ -12,3 +12,7 @@ with create_default_runtime() as runtime:
 ```
 
 Python 3.11 or newer is required. Run `python app.py` for the demonstration and `python -m unittest discover -s tests -v` for tests. v1.0 is a deterministic foundation; project-specific models, autonomous policy application, remote services, and cross-project data ownership remain outside scope.
+
+## Documentation
+
+Authoritative architecture, integration, release, and change documents are indexed in [Enhancement documentation](../docs/capabilities/enhancement/README.md).

@@ -1,8 +1,9 @@
 # OS Ecosystem
 
-OS Ecosystem is the governance, architecture, registry, and navigation layer that connects independent projects without merging their runtimes.
+OS Ecosystem is the governance, architecture, registry, capability, and navigation layer that connects independent projects without merging their runtimes.
 
-**Current version:** v0.4.3
+**Current version:** v0.4.4
+**Release type:** Documentation Structure Standardization Patch
 **Status:** Stable
 **Projects:** Living OS, Universal Learning Engine
 **Capabilities:** Safety, Enhancement, Automation
@@ -11,30 +12,44 @@ OS Ecosystem is the governance, architecture, registry, and navigation layer tha
 ## Product contract
 
 - No sidebar and no conventional dashboard.
-- A compact menu exposes Projects, Capability, Automation, Governance, Architecture, and Registry without adding a sidebar.
-- `OS ECOSYSTEM` remains the visual center.
-- Projects appear as surrounding nodes.
-- Selecting a connected node opens that project's own UI.
-- Each project remains independently owned, versioned, deployed, and operated.
-- Governance, architecture, and registry identifiers are visible while databases, runtimes, credentials, and operational internals remain hidden.
-- Enhancement provides one shared Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation foundation for all projects.
-- Automation provides shared Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision modules for all projects.
-- Automation integrates with Safety through validation, risk, approval, logging, and recovery gates, and consumes Enhancement results only as advisory inputs.
+- A compact menu exposes Projects, Capability, Automation, Governance, Architecture, and Registry.
+- OS ECOSYSTEM remains the visual center, with independent projects presented as surrounding nodes.
+- Project nodes open each project's public Streamlit UI in a new browser tab.
+- Governance, architecture, and registry identities are visible while databases, runtimes, credentials, and operational internals remain hidden.
+- Living OS, Universal Learning Engine, Safety, Enhancement, and Automation keep independent ownership and release boundaries.
 
 ## Run locally
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+    pip install -r requirements.txt
+    streamlit run app.py
 
-Production URLs for Living OS and Universal Learning Engine are included as defaults. Both destinations can be overridden with `LIVING_OS_URL` and `ULE_URL` in Streamlit Secrets or the environment.
+Living OS and Universal Learning Engine production URLs are configured as direct public destinations. They may be overridden with LIVING_OS_URL and ULE_URL through Streamlit Secrets or the environment.
 
 ## Documentation
 
-1. [VERSION](./VERSION) - current release identity
-2. [ARCHITECTURE.md](./ARCHITECTURE.md) - boundaries and runtime flow
-3. [STRUCTURE.md](./STRUCTURE.md) - repository layout
-4. [ROADMAP.md](./ROADMAP.md) - delivery sequence and future scope
-5. [MASTER_DESIGN.md](./MASTER_DESIGN.md) - canonical product and visual design
-6. [RELEASE_NOTES.md](./RELEASE_NOTES.md) - release evidence
+All authoritative design and lifecycle documents are managed below [docs](./docs/README.md).
+
+- [Architecture](./docs/architecture/ARCHITECTURE.md): architecture, master design, structure, and roadmap
+- [Governance](./docs/governance/CONSTITUTION.md): constitution, rules, principles, standards, policies, decisions, and conventions
+- [Registry](./docs/registry/PROJECT_REGISTRY.md): projects, capabilities, versions, and releases
+- [Release](./docs/release/RELEASE_NOTES_v0.4.4.md): release notes, version history, and migration notes
+- [Capabilities](./docs/capabilities/README.md): the common documentation rule and capability-specific contracts
+- [VERSION](./VERSION): current repository release identity
+
+## Repository structure
+
+- app.py and requirements.txt define the Streamlit launcher runtime.
+- tests contains ecosystem and documentation contract checks.
+- docs contains every authoritative design, governance, registry, release, and capability document.
+- Safety-Capability, Enhancement-Capability, and Automation-Capability contain independent capability code and local operational READMEs.
+- Living-OS and Universal-Learning-Engine remain independent connected project workspaces and are not imported by the launcher.
+
+See the complete [repository structure](./docs/architecture/STRUCTURE.md).
+
+## Documentation management principles
+
+1. New authoritative documents are created in the matching docs category.
+2. Capability documentation follows the same central structure as ecosystem documentation.
+3. Operational package READMEs may remain beside code but link to their authoritative docs location.
+4. Moves must preserve or update every internal Markdown link.
+5. Documentation-only patches do not change launcher or capability behavior.
