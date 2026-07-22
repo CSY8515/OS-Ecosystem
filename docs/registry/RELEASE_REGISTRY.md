@@ -2,6 +2,7 @@
 
 | Release | Scope | Summary | Evidence |
 | --- | --- | --- | --- |
+| v0.6.1 | Ecosystem | AI Hub official project entry and navigation | [Notes](../release/RELEASE_NOTES_v0.6.1.md) |
 | v0.6.0 | Capability | Personal Secretary decision-support foundation | [Notes](../release/RELEASE_NOTES_v0.6.0.md) |
 | v0.5.0 | Capability | Collaboration & Connectivity foundation | [Notes](../release/RELEASE_NOTES_v0.5.0.md) |
 | v0.4.4 | Documentation | Structure standardization | [Notes](../release/RELEASE_NOTES_v0.4.4.md) |

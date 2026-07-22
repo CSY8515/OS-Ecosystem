@@ -1,4 +1,4 @@
-"""OS Ecosystem v0.6.0 unified launcher and capability catalog."""
+"""OS Ecosystem v0.6.1 unified launcher and capability catalog."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import streamlit as st
 
 
-VERSION = "0.6.0"
+VERSION = "0.6.1"
 
 
 @dataclass(frozen=True)
@@ -66,6 +66,13 @@ def get_projects() -> tuple[Project, ...]:
             ),
             position="node-right",
         ),
+        Project(
+            name="AI Hub",
+            label="AI OPERATIONS",
+            description="Provider-neutral AI routing, health, and operations for every ecosystem project.",
+            url=_configured_url("AI_HUB_URL") or "#ai-hub",
+            position="node-bottom",
+        ),
     )
 
 
@@ -76,8 +83,13 @@ def _project_node(project: Project) -> str:
     classes = f"project-node {project.position}"
     if project.url:
         url = html.escape(project.url, quote=True)
+        link_attributes = (
+            'target="_blank" rel="noopener noreferrer"'
+            if not project.url.startswith("#")
+            else ""
+        )
         return f"""
-        <a class="{classes}" href="{url}" target="_blank" rel="noopener noreferrer" aria-label="{name} 열기">
+        <a class="{classes}" href="{url}" {link_attributes} aria-label="{name} 열기">
           <span class="node-orbit" aria-hidden="true"></span>
           <span class="node-index">CONNECTED PROJECT</span>
           <strong>{name}</strong>
@@ -96,14 +108,27 @@ def _project_node(project: Project) -> str:
     """
 
 
+def _ai_hub_entry_action(projects: tuple[Project, ...]) -> str:
+    ai_hub = next(project for project in projects if project.name == "AI Hub")
+    if ai_hub.url and not ai_hub.url.startswith("#"):
+        url = html.escape(ai_hub.url, quote=True)
+        return (
+            f'<a class="entry-action" href="{url}" target="_blank" '
+            'rel="noopener noreferrer">Open AI Hub dashboard</a>'
+        )
+    return '<span class="entry-status">Dashboard connection pending / AI_HUB_URL</span>'
+
+
 def render_launcher(projects: tuple[Project, ...]) -> None:
     nodes = "".join(_project_node(project) for project in projects)
+    ai_hub_entry_action = _ai_hub_entry_action(projects)
     st.html(
         f"""
         <main class="ecosystem-shell">
           <div id="projects" class="anchor-target"></div>
           <nav class="ecosystem-nav" aria-label="Ecosystem menu">
             <a href="#projects">Projects</a>
+            <a href="#ai-hub">AI Hub</a>
             <a href="#capability">Capability</a>
             <a href="#secretary">Secretary</a>
             <a href="#automation">Automation</a>
@@ -117,6 +142,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           <section class="ecosystem-stage" aria-label="OS Ecosystem 프로젝트 런처">
             <div class="connection-line line-left" aria-hidden="true"></div>
             <div class="connection-line line-right" aria-hidden="true"></div>
+            <div class="connection-line line-bottom" aria-hidden="true"></div>
             {nodes}
             <div class="ecosystem-core">
               <span class="core-eyebrow">INTEGRATED LAUNCHER</span>
@@ -128,6 +154,21 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
           </section>
 
           <div class="ecosystem-layers">
+            <section class="ecosystem-section ai-hub-section" id="ai-hub">
+              <header class="section-heading">
+                <span class="section-kicker">OFFICIAL PROJECT / AI OPERATIONS</span>
+                <h2>AI Hub</h2>
+                <p>The shared AI operations platform used by Living OS, Universal Learning Engine, and every approved ecosystem project.</p>
+              </header>
+              <div class="ecosystem-grid ai-hub-grid">
+                <article class="ecosystem-item"><span class="item-index">PROJECT VERSION</span><h3>v0.1.0</h3><p>Independent release lifecycle with provider-neutral contracts.</p></article>
+                <article class="ecosystem-item"><span class="item-index">ROUTING</span><h3>Automatic</h3><p>Selects an available provider through health-aware routing and failover.</p></article>
+                <article class="ecosystem-item"><span class="item-index">PROVIDERS</span><h3>OpenAI / Gemini / Claude</h3><p>Credentials remain environment- or secret-managed and are never stored in source.</p></article>
+                <article class="ecosystem-item"><span class="item-index">OPERATIONS</span><h3>Dashboard Ready</h3><p>Provider health, usage, routing status, and execution records in one operator view.</p></article>
+              </div>
+              <div class="ai-hub-entry">{ai_hub_entry_action}</div>
+            </section>
+
             <section class="ecosystem-section" id="capability">
               <header class="section-heading">
                 <span class="section-kicker">01 / CAPABILITY</span>
@@ -303,6 +344,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-01</span>
                   <h3>Project Registry</h3>
+                  <div class="registry-row"><span>AI Hub</span><b>v0.1.0 / RELEASE CANDIDATE</b></div>
                   <div class="registry-row"><span>Living OS</span><b>v2.0.4 · STABLE</b></div>
                   <div class="registry-row"><span>Universal Learning Engine</span><b>v1.0.0 · STABLE</b></div>
                 </article>
@@ -319,6 +361,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.6.1</span><b>AI HUB PROJECT ENTRY</b></div>
                   <div class="registry-row"><span>v0.6.0</span><b>PERSONAL SECRETARY</b></div>
                   <div class="registry-row"><span>v0.5.0</span><b>COLLABORATION &amp; CONNECTIVITY</b></div>
                   <div class="registry-row"><span>v0.4.3</span><b>AUTOMATION CAPABILITY</b></div>
@@ -374,6 +417,7 @@ def apply_theme() -> None:
         .connectivity-grid { grid-template-columns:repeat(4,1fr); }
         .architecture-grid { grid-template-columns:repeat(5,1fr); }
         .registry-grid { grid-template-columns:repeat(3,1fr); }
+        .ai-hub-grid { grid-template-columns:repeat(4,1fr); }
         .ecosystem-item { min-height:210px; padding:27px; background:#091415; }
         .ecosystem-item h3 { margin:34px 0 13px; font:600 16px/1.25 Manrope,sans-serif; letter-spacing:-.025em; }
         .ecosystem-item p { margin:0; color:#758789; font-size:11px; line-height:1.7; }
@@ -385,13 +429,16 @@ def apply_theme() -> None:
         .enhancement-item { background:linear-gradient(135deg,#0b1b1c,#091415); box-shadow:inset 0 2px 0 rgba(143,225,219,.45); }
         .automation-item { background:linear-gradient(135deg,#102122,#091415); box-shadow:inset 0 2px 0 rgba(117,227,174,.65); }
         .capability-link { display:inline-block; margin-top:20px; color:var(--cyan) !important; text-decoration:none !important; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+        .ai-hub-entry { margin-top:22px; }
+        .entry-action,.entry-status { display:inline-block; padding:12px 15px; border:1px solid rgba(143,225,219,.18); color:var(--cyan) !important; background:rgba(143,225,219,.05); text-decoration:none !important; font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
+        .entry-action:hover,.entry-action:focus-visible { border-color:rgba(143,225,219,.6); background:rgba(143,225,219,.1); outline:none; }
         .automation-flow { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:-8px 0 30px; padding:18px 20px; border:1px solid rgba(143,225,219,.13); background:rgba(9,20,21,.72); }
         .automation-flow span { color:#b7c5c5; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
         .automation-flow i { color:#507173; font-style:normal; }
         .integration-note { margin:22px 0 0; color:#718789; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
         .module-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:22px; }
         .module-list span { padding:6px 8px; border:1px solid rgba(143,225,219,.12); color:#9eb2b3; font-size:8px; letter-spacing:.06em; text-transform:uppercase; }
-        .ecosystem-stage { min-height:calc(100vh - 78px); position:relative; display:grid; place-items:center; }
+        .ecosystem-stage { min-height:max(calc(100vh - 78px),720px); position:relative; display:grid; place-items:center; }
         .ecosystem-core { width:330px; height:330px; border:1px solid rgba(143,225,219,.24); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:3; background:radial-gradient(circle at 50% 40%, rgba(22,55,55,.96), rgba(7,16,17,.97) 67%); box-shadow:0 0 0 22px rgba(143,225,219,.025), 0 0 0 23px rgba(143,225,219,.07), 0 34px 90px rgba(0,0,0,.45); }
         .ecosystem-core:before,.ecosystem-core:after { content:""; position:absolute; border-radius:50%; border:1px dashed rgba(143,225,219,.11); inset:-55px; animation:spin 45s linear infinite; }
         .ecosystem-core:after { inset:-95px; animation-direction:reverse; animation-duration:70s; }
@@ -408,6 +455,11 @@ def apply_theme() -> None:
         .project-node:hover { transform:translateY(-50%) scale(1.025); border-color:rgba(143,225,219,.6); background:linear-gradient(145deg,rgba(18,42,42,.98),rgba(8,18,19,.98)); }
         .node-left { right:calc(50% + 310px); }
         .node-right { left:calc(50% + 310px); }
+        .node-bottom { left:50%; top:calc(50% + 260px); width:330px; min-height:0; padding:20px; transform:translate(-50%,-50%); }
+        .node-bottom:hover { transform:translate(-50%,-50%) scale(1.025); }
+        .node-bottom strong { margin:14px 0 8px; }
+        .node-bottom .node-copy { min-height:0; }
+        .node-bottom .node-action { margin-top:14px; padding-top:12px; }
         .project-node strong { font:600 20px/1.15 Manrope,sans-serif; display:block; margin:18px 0 10px; letter-spacing:-.03em; }
         .node-copy { display:block; min-height:38px; font-size:11px; line-height:1.65; color:#859697; }
         .node-action { display:block; margin-top:20px; padding-top:15px; border-top:1px solid rgba(143,225,219,.1); color:var(--cyan); font-size:10px; letter-spacing:.08em; }
@@ -418,6 +470,7 @@ def apply_theme() -> None:
         .connection-line { position:absolute; z-index:2; top:50%; height:1px; width:215px; background:linear-gradient(90deg,transparent,var(--line)); }
         .line-left { right:calc(50% + 165px); }
         .line-right { left:calc(50% + 165px); transform:rotate(180deg); }
+        .line-bottom { left:50%; top:calc(50% + 165px); width:1px; height:105px; background:linear-gradient(180deg,var(--line),transparent); }
         .ambient { position:absolute; width:380px; height:380px; border-radius:50%; filter:blur(120px); opacity:.08; background:#8fe1db; }
         .ambient-one { left:-180px; top:-180px; }.ambient-two { right:-200px; bottom:-200px; }
         .ecosystem-shell footer { height:78px; padding:0 36px; display:flex !important; align-items:center; justify-content:space-between; border-top:1px solid rgba(143,225,219,.08); }
@@ -427,15 +480,17 @@ def apply_theme() -> None:
           .ecosystem-core { order:1; width:280px; height:280px; }
           .project-node { order:2; position:relative; top:auto; left:auto; right:auto; transform:none; width:min(100%,420px); min-height:160px; }
           .project-node:hover { transform:scale(1.015); }
+          .node-bottom,.node-bottom:hover { transform:none; }
           .connection-line { display:none; }
           .node-right { order:3; }
+          .node-bottom { order:4; }
           .ecosystem-nav { width:calc(100% - 32px); justify-content:center; flex-wrap:wrap; }
           .ecosystem-nav a { padding:9px 10px; font-size:8px; }
           .ecosystem-section { padding:74px 24px; }
           .section-heading { grid-template-columns:1fr; }
           .section-heading h2 { margin-top:18px; }
           .section-heading p { grid-column:1; }
-          .capability-grid,.automation-grid,.connectivity-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
+          .ai-hub-grid,.capability-grid,.automation-grid,.connectivity-grid,.governance-grid,.architecture-grid,.registry-grid { grid-template-columns:1fr; }
           .automation-flow { flex-wrap:wrap; justify-content:center; }
           .ecosystem-item { min-height:auto; }
         }

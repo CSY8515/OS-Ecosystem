@@ -1,6 +1,6 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.6.0
+Canonical version: v0.6.1
 
 ## Product statement
 
