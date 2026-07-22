@@ -1,10 +1,18 @@
 # OS Ecosystem Roadmap
 
+## v0.6.2 - AI Hub Repository Integration Patch
+
+- [x] Include the complete `AI-Hub/` source, tests, docs, configuration examples, and data boundary in OS Ecosystem.
+- [x] Remove `AI_HUB_URL` and every independent service/repository release assumption.
+- [x] Route the launcher card and top navigation to the integrated AI Hub dashboard.
+- [x] Add AI Hub to repository CI and the OS Ecosystem release lifecycle.
+- [x] Preserve secret exclusion and runtime-data isolation.
+
 ## v0.6.1 - AI Hub Official Project Entry
 
 - [x] Register AI Hub beside Living OS and Universal Learning Engine.
 - [x] Add an AI Hub launcher card and top navigation entry.
-- [x] Provide a safe internal entry screen until AI_HUB_URL is configured.
+- [x] Provide the initial AI Hub project entry screen.
 - [x] Preserve existing project destinations and responsive behavior.
 - [x] Add launcher, documentation, registry, and regression coverage.
 

@@ -37,6 +37,10 @@ class DocumentationStructureTests(unittest.TestCase):
             "docs/release/RELEASE_NOTES_v0.5.0.md",
             "docs/release/RELEASE_NOTES_v0.6.0.md",
             "docs/release/RELEASE_NOTES_v0.6.1.md",
+            "docs/release/RELEASE_NOTES_v0.6.2.md",
+            "CHANGELOG.md",
+            "AI-Hub/README.md",
+            "AI-Hub/docs/MASTER_DESIGN.md",
             "docs/release/VERSION_HISTORY.md",
             "docs/release/MIGRATION_NOTES_v0.4.4.md",
             "docs/capabilities/safety/README.md",
@@ -75,11 +79,17 @@ class DocumentationStructureTests(unittest.TestCase):
             self.assertFalse((ROOT / filename).exists(), filename)
 
     def test_release_identity_is_consistent(self):
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.6.1")
+        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.6.2")
         app_source = (ROOT / "app.py").read_text(encoding="utf-8")
-        self.assertIn('VERSION = "0.6.1"', app_source)
-        self.assertIn("OS Ecosystem v0.6.1", app_source)
-        self.assertIn("v0.6.1", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "0.6.2"', app_source)
+        self.assertIn("OS Ecosystem v0.6.2", app_source)
+        self.assertIn("v0.6.2", (ROOT / "README.md").read_text(encoding="utf-8"))
+
+    def test_ai_hub_is_integrated_and_external_url_is_not_supported(self):
+        app_source = (ROOT / "app.py").read_text(encoding="utf-8")
+        self.assertNotIn("AI_HUB_URL", app_source)
+        self.assertIn('url="?project=ai-hub"', app_source)
+        self.assertTrue((ROOT / "AI-Hub" / "src" / "ai_hub").is_dir())
 
     def test_capability_readmes_link_to_central_docs(self):
         expected = ("safety", "enhancement", "automation", "collaboration-connectivity", "personal-secretary")
@@ -90,6 +100,8 @@ class DocumentationStructureTests(unittest.TestCase):
     def test_internal_markdown_links_resolve(self):
         markdown_files = [ROOT / "README.md", *CAPABILITY_READMES]
         markdown_files.extend(sorted((ROOT / "docs").rglob("*.md")))
+        markdown_files.append(ROOT / "AI-Hub" / "README.md")
+        markdown_files.extend(sorted((ROOT / "AI-Hub" / "docs").rglob("*.md")))
         failures = []
 
         for document in markdown_files:

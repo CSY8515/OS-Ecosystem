@@ -1,17 +1,17 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.6.1
+Canonical version: v0.6.2
 
 ## Product statement
 
-OS Ecosystem is the quiet governance and navigation layer for a family of independent systems. It creates coherence through shared rules, architecture, registries, and direct project entry without merging runtimes.
+OS Ecosystem is the quiet governance, navigation, capability, and common-platform layer for the ecosystem. It connects external projects while owning approved shared components such as AI Hub.
 
 ## Experience principles
 
 1. **Center before chrome.** The first visual anchor is `OS ECOSYSTEM`, not navigation furniture.
 2. **Governed visibility.** Users can inspect approved governance, architecture, and registry identities while implementation details remain hidden.
 3. **One deliberate action.** A project node opens that project's UI directly.
-4. **Independent by design.** Connection never implies shared data ownership or a shared release lifecycle.
+4. **Explicit ownership.** External project connection does not imply shared data ownership; repository-owned platforms follow the OS Ecosystem release lifecycle.
 5. **Calm technical confidence.** The interface feels precise, spacious, and operational without becoming a monitoring dashboard.
 
 ## Spatial design
@@ -52,7 +52,7 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 
 - No visible Streamlit sidebar, toolbar, or generic dashboard cards.
 - `OS ECOSYSTEM` is centered at desktop widths.
-- Living OS and Universal Learning Engine are the only public project nodes.
+- Living OS, Universal Learning Engine, and AI Hub are the official public project/platform nodes.
 - Governance contains Constitution, Rules, Principles, Standards, and Policies.
 - Architecture contains Master Architecture, Repository Strategy, Integration Strategy, and Roadmap.
 - Registry contains Project Registry, Capability Registry, and Release History.
@@ -61,7 +61,7 @@ OS Ecosystem is the quiet governance and navigation layer for a family of indepe
 - The governed automation flow is visible as Validation, Risk Check, Approval, Execution, Logging, and Recovery.
 - Collaboration & Connectivity displays capability version, registered/available/degraded connectors, last health check, and recent result with demo state clearly labeled.
 - Personal Secretary displays capability version, briefing readiness, reminder ownership, recommendation mode, and notification status; its advice remains deterministic and non-autonomous.
-- Connected nodes navigate to configured HTTP(S) project UIs.
+- Living OS and Universal Learning Engine nodes navigate to configured HTTP(S) UIs; AI Hub uses the repository-internal application route.
 - Missing or invalid destinations cannot become unsafe links.
 - Layout remains usable on mobile and with reduced motion.
 - Capability registry identity may be shown, but databases, runtimes, credentials, and implementation details remain hidden.

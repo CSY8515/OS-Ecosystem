@@ -1,16 +1,19 @@
-"""OS Ecosystem v0.6.1 unified launcher and capability catalog."""
+"""OS Ecosystem v0.6.2 unified launcher and integrated platform catalog."""
 
 from __future__ import annotations
 
 import html
 import os
+import sys
 from dataclasses import dataclass
+from pathlib import Path
 from urllib.parse import urlparse
 
 import streamlit as st
 
 
-VERSION = "0.6.1"
+VERSION = "0.6.2"
+AI_HUB_SOURCE = Path(__file__).resolve().parent / "AI-Hub" / "src"
 
 
 @dataclass(frozen=True)
@@ -70,7 +73,7 @@ def get_projects() -> tuple[Project, ...]:
             name="AI Hub",
             label="AI OPERATIONS",
             description="Provider-neutral AI routing, health, and operations for every ecosystem project.",
-            url=_configured_url("AI_HUB_URL") or "#ai-hub",
+            url="?project=ai-hub",
             position="node-bottom",
         ),
     )
@@ -85,7 +88,7 @@ def _project_node(project: Project) -> str:
         url = html.escape(project.url, quote=True)
         link_attributes = (
             'target="_blank" rel="noopener noreferrer"'
-            if not project.url.startswith("#")
+            if project.url.startswith(("http://", "https://"))
             else ""
         )
         return f"""
@@ -108,27 +111,20 @@ def _project_node(project: Project) -> str:
     """
 
 
-def _ai_hub_entry_action(projects: tuple[Project, ...]) -> str:
-    ai_hub = next(project for project in projects if project.name == "AI Hub")
-    if ai_hub.url and not ai_hub.url.startswith("#"):
-        url = html.escape(ai_hub.url, quote=True)
-        return (
-            f'<a class="entry-action" href="{url}" target="_blank" '
-            'rel="noopener noreferrer">Open AI Hub dashboard</a>'
-        )
-    return '<span class="entry-status">Dashboard connection pending / AI_HUB_URL</span>'
+def _ai_hub_entry_action() -> str:
+    return '<a class="entry-action" href="?project=ai-hub">Open integrated AI Hub dashboard</a>'
 
 
 def render_launcher(projects: tuple[Project, ...]) -> None:
     nodes = "".join(_project_node(project) for project in projects)
-    ai_hub_entry_action = _ai_hub_entry_action(projects)
+    ai_hub_entry_action = _ai_hub_entry_action()
     st.html(
         f"""
         <main class="ecosystem-shell">
           <div id="projects" class="anchor-target"></div>
           <nav class="ecosystem-nav" aria-label="Ecosystem menu">
             <a href="#projects">Projects</a>
-            <a href="#ai-hub">AI Hub</a>
+            <a href="?project=ai-hub">AI Hub</a>
             <a href="#capability">Capability</a>
             <a href="#secretary">Secretary</a>
             <a href="#automation">Automation</a>
@@ -161,7 +157,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <p>The shared AI operations platform used by Living OS, Universal Learning Engine, and every approved ecosystem project.</p>
               </header>
               <div class="ecosystem-grid ai-hub-grid">
-                <article class="ecosystem-item"><span class="item-index">PROJECT VERSION</span><h3>v0.1.0</h3><p>Independent release lifecycle with provider-neutral contracts.</p></article>
+                <article class="ecosystem-item"><span class="item-index">COMPONENT VERSION</span><h3>v0.1.0</h3><p>Included in the OS Ecosystem release lifecycle with provider-neutral contracts.</p></article>
                 <article class="ecosystem-item"><span class="item-index">ROUTING</span><h3>Automatic</h3><p>Selects an available provider through health-aware routing and failover.</p></article>
                 <article class="ecosystem-item"><span class="item-index">PROVIDERS</span><h3>OpenAI / Gemini / Claude</h3><p>Credentials remain environment- or secret-managed and are never stored in source.</p></article>
                 <article class="ecosystem-item"><span class="item-index">OPERATIONS</span><h3>Dashboard Ready</h3><p>Provider health, usage, routing status, and execution records in one operator view.</p></article>
@@ -303,7 +299,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
               <header class="section-heading">
                 <span class="section-kicker">03 / ARCHITECTURE</span>
                 <h2>Architecture</h2>
-                <p>The structural map for projects that remain independent by design.</p>
+                <p>The structural map for connected projects and repository-owned common platforms.</p>
               </header>
               <div class="ecosystem-grid architecture-grid">
                 <article class="ecosystem-item">
@@ -314,17 +310,17 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-02</span>
                   <h3>Repository Strategy</h3>
-                  <p>Each project keeps an independent repository, version history, test suite, and release lifecycle.</p>
+                  <p>Connected external projects keep independent repositories; repository-owned platforms are versioned and released with OS Ecosystem.</p>
                 </article>
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-03</span>
                   <h3>Integration Strategy</h3>
-                  <p>Connections use explicit public contracts and direct application links without runtime merging.</p>
+                  <p>External projects use public contracts and direct links; AI Hub uses an internal package and application route.</p>
                 </article>
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-04</span>
                   <h3>Roadmap</h3>
-                  <p>Expand governance and registry depth before onboarding additional independent projects.</p>
+                  <p>Expand governance and registry depth before onboarding additional projects or common platforms.</p>
                 </article>
                 <article class="ecosystem-item">
                   <span class="item-index">ARC-05</span>
@@ -344,7 +340,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-01</span>
                   <h3>Project Registry</h3>
-                  <div class="registry-row"><span>AI Hub</span><b>v0.1.0 / RELEASE CANDIDATE</b></div>
+                  <div class="registry-row"><span>AI Hub</span><b>v0.1.0 / INTEGRATED</b></div>
                   <div class="registry-row"><span>Living OS</span><b>v2.0.4 · STABLE</b></div>
                   <div class="registry-row"><span>Universal Learning Engine</span><b>v1.0.0 · STABLE</b></div>
                 </article>
@@ -361,6 +357,7 @@ def render_launcher(projects: tuple[Project, ...]) -> None:
                 <article class="ecosystem-item registry-item">
                   <span class="item-index">REG-03</span>
                   <h3>Release History</h3>
+                  <div class="registry-row"><span>v0.6.2</span><b>AI HUB PLATFORM INTEGRATION</b></div>
                   <div class="registry-row"><span>v0.6.1</span><b>AI HUB PROJECT ENTRY</b></div>
                   <div class="registry-row"><span>v0.6.0</span><b>PERSONAL SECRETARY</b></div>
                   <div class="registry-row"><span>v0.5.0</span><b>COLLABORATION &amp; CONNECTIVITY</b></div>
@@ -398,6 +395,12 @@ def apply_theme() -> None:
           background-size:auto, 52px 52px, 52px 52px, auto;
         }
         .block-container { max-width:none; padding:0 !important; }
+        [data-testid="stAppViewContainer"]:has(.integrated-platform-nav) .block-container { max-width:1120px; padding:28px 34px 70px !important; }
+        .integrated-platform-nav { margin:0 0 42px; padding-bottom:18px; border-bottom:1px solid rgba(143,225,219,.14); }
+        .integrated-platform-nav a { color:var(--cyan) !important; text-decoration:none !important; font:500 10px/1 Inter,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+        [data-testid="stAppViewContainer"]:has(.integrated-platform-nav) h1,
+        [data-testid="stAppViewContainer"]:has(.integrated-platform-nav) h2 { color:var(--ink); font-family:Manrope,sans-serif; }
+        [data-testid="stAppViewContainer"]:has(.integrated-platform-nav) [data-testid="stMetric"] { padding:18px; border:1px solid rgba(143,225,219,.13); background:#091415; }
         .ecosystem-shell { min-height:100vh; position:relative; overflow:hidden; font-family:Inter,sans-serif; }
         .anchor-target { position:absolute; top:0; }
         .ecosystem-nav { position:absolute; z-index:10; top:24px; left:50%; transform:translateX(-50%); display:flex; align-items:center; padding:5px; border:1px solid rgba(143,225,219,.12); background:rgba(7,16,17,.78); backdrop-filter:blur(18px); }
@@ -476,6 +479,7 @@ def apply_theme() -> None:
         .ecosystem-shell footer { height:78px; padding:0 36px; display:flex !important; align-items:center; justify-content:space-between; border-top:1px solid rgba(143,225,219,.08); }
         @keyframes spin { to { transform:rotate(360deg); } }
         @media (max-width:1050px) {
+          [data-testid="stAppViewContainer"]:has(.integrated-platform-nav) .block-container { padding:22px 18px 54px !important; }
           .ecosystem-stage { min-height:auto; padding:110px 24px 50px; display:flex; flex-direction:column; gap:34px; }
           .ecosystem-core { order:1; width:280px; height:280px; }
           .project-node { order:2; position:relative; top:auto; left:auto; right:auto; transform:none; width:min(100%,420px); min-height:160px; }
@@ -500,6 +504,21 @@ def apply_theme() -> None:
     )
 
 
+def render_ai_hub() -> None:
+    """Render the repository-owned AI Hub operator surface in this application."""
+    source = str(AI_HUB_SOURCE)
+    if source not in sys.path:
+        sys.path.insert(0, source)
+
+    from ai_hub.presentation.operator_ui.app import build_initial_snapshot
+    from ai_hub.presentation.operator_ui.pages.dashboard import render_dashboard
+
+    st.html(
+        '<nav class="integrated-platform-nav"><a href="./">← OS Ecosystem launcher</a></nav>'
+    )
+    render_dashboard(build_initial_snapshot(), st)
+
+
 def main() -> None:
     st.set_page_config(
         page_title="OS Ecosystem",
@@ -508,6 +527,9 @@ def main() -> None:
         initial_sidebar_state="collapsed",
     )
     apply_theme()
+    if st.query_params.get("project") == "ai-hub":
+        render_ai_hub()
+        return
     render_launcher(get_projects())
 
 

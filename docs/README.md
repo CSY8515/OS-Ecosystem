@@ -1,6 +1,6 @@
 # OS Ecosystem Documentation
 
-Version: v0.6.1
+Version: v0.6.2
 
 This is the authoritative documentation root.
 
@@ -26,6 +26,7 @@ This is the authoritative documentation root.
 - [Release Registry](./registry/RELEASE_REGISTRY.md)
 
 ## Releases
+- [v0.6.2 Release Notes](./release/RELEASE_NOTES_v0.6.2.md)
 - [v0.6.1 Release Notes](./release/RELEASE_NOTES_v0.6.1.md)
 - [v0.6.0 Release Notes](./release/RELEASE_NOTES_v0.6.0.md)
 - [v0.5.0 Release Notes](./release/RELEASE_NOTES_v0.5.0.md)

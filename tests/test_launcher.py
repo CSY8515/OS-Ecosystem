@@ -9,7 +9,7 @@ from streamlit.testing.v1 import AppTest
 
 class LauncherContractTests(unittest.TestCase):
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.6.1")
+        self.assertEqual(app.VERSION, "0.6.2")
 
     def test_initial_catalog_contains_official_projects(self):
         projects = app.get_projects()
@@ -18,19 +18,12 @@ class LauncherContractTests(unittest.TestCase):
             ["Living OS", "Universal Learning Engine", "AI Hub"],
         )
 
-    def test_ai_hub_uses_internal_entry_when_dashboard_url_is_missing(self):
-        with patch.dict(os.environ, {}, clear=True):
-            project = next(project for project in app.get_projects() if project.name == "AI Hub")
-        self.assertEqual(project.url, "#ai-hub")
+    def test_ai_hub_uses_repository_internal_dashboard(self):
+        project = next(project for project in app.get_projects() if project.name == "AI Hub")
+        self.assertEqual(project.url, "?project=ai-hub")
         rendered = app._project_node(project)
-        self.assertIn('href="#ai-hub"', rendered)
+        self.assertIn('href="?project=ai-hub"', rendered)
         self.assertNotIn('target="_blank"', rendered)
-
-    def test_ai_hub_uses_configured_dashboard_url(self):
-        with patch.dict(os.environ, {"AI_HUB_URL": "https://ai-hub.example.com"}, clear=False):
-            project = next(project for project in app.get_projects() if project.name == "AI Hub")
-        self.assertEqual(project.url, "https://ai-hub.example.com")
-        self.assertIn('target="_blank"', app._project_node(project))
 
     def test_valid_environment_destination_is_accepted(self):
         with patch.dict(os.environ, {"ULE_URL": "https://ule.example.com"}, clear=False):
@@ -69,7 +62,7 @@ class LauncherContractTests(unittest.TestCase):
         projects = (
             app.Project("Living OS", "LIVING", "Living", "https://living.example.com", "node-left"),
             app.Project("Universal Learning Engine", "LEARNING", "Learning", "https://learning.example.com", "node-right"),
-            app.Project("AI Hub", "AI OPERATIONS", "Operations", "#ai-hub", "node-bottom"),
+            app.Project("AI Hub", "AI OPERATIONS", "Operations", "?project=ai-hub", "node-bottom"),
         )
         with patch.object(app.st, "html") as html_renderer:
             app.render_launcher(projects)
@@ -103,8 +96,16 @@ class LauncherContractTests(unittest.TestCase):
         self.assertIn('id="ai-hub"', markup)
         self.assertIn("OFFICIAL PROJECT / AI OPERATIONS", markup)
         self.assertIn("OpenAI / Gemini / Claude", markup)
-        self.assertIn("Dashboard connection pending / AI_HUB_URL", markup)
-        self.assertIn("AI Hub</span><b>v0.1.0 / RELEASE CANDIDATE", markup)
+        self.assertIn('href="?project=ai-hub"', markup)
+        self.assertIn("Open integrated AI Hub dashboard", markup)
+        self.assertIn("AI Hub</span><b>v0.1.0 / INTEGRATED", markup)
+
+    def test_integrated_ai_hub_dashboard_runs_without_exception(self):
+        app_test = AppTest.from_file(str(Path(app.__file__)), default_timeout=20)
+        app_test.query_params["project"] = "ai-hub"
+        app_test.run()
+        self.assertEqual(list(app_test.exception), [])
+        self.assertEqual(app_test.title[0].value, "AI Hub")
 
     def test_enhancement_capability_modules_and_registry_are_rendered(self):
         with patch.object(app.st, "html") as html_renderer:

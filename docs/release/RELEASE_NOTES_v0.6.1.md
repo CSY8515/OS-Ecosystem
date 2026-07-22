@@ -1,22 +1,24 @@
 # OS Ecosystem v0.6.1 Release Notes
 
+> Ownership correction: v0.6.2 supersedes the independent AI Hub repository/service assumptions in this historical release note. AI Hub is an OS Ecosystem-owned common platform component.
+
 Release date: 2026-07-22
 
-OS Ecosystem v0.6.1 registers AI Hub as an official independent ecosystem project beside Living OS and Universal Learning Engine.
+OS Ecosystem v0.6.1 introduced AI Hub as an official ecosystem entry beside Living OS and Universal Learning Engine.
 
 ## AI Hub project entry
 
 - Added an AI Hub card to the integrated launcher.
 - Added AI Hub to the top navigation.
 - Added a responsive AI Hub entry screen with version, routing, provider, and operations summaries.
-- Added AI Hub v0.1.0 Release Candidate to the project and version registries.
-- Added optional `AI_HUB_URL` configuration. Safe HTTP(S) destinations open the independent dashboard; otherwise the launcher uses its internal AI Hub entry screen.
+- Added AI Hub v0.1.0 to the project and version registries as an initial entry candidate.
+- Added an initial internal AI Hub entry screen; v0.6.2 replaced its provisional external-dashboard concept with the integrated repository route.
 
 ## Compatibility
 
 - Living OS and Universal Learning Engine URLs and independent runtimes are unchanged.
 - Existing capability contracts, registries, and launcher sections remain compatible.
-- AI Hub runtime source, credentials, Provider validation, release, and deployment remain outside this OS Ecosystem patch.
+- AI Hub runtime source was not included in this patch and was subsequently integrated by v0.6.2. Credentials remain deployment secrets.
 
 ## Security
 

@@ -1,10 +1,10 @@
 # OS Ecosystem Architecture
 
-Version: v0.6.1
+Version: v0.6.2
 
 ## Purpose
 
-OS Ecosystem is the governance, architecture, registry, capability, and navigation shell above independent project runtimes. It provides shared system authority and reusable cross-project capabilities without merging project execution or data ownership.
+OS Ecosystem is the governance, architecture, registry, capability, navigation, and common-platform shell above project runtimes. It provides shared system authority and reusable cross-project capabilities while retaining caller data ownership.
 
 ## Capability architecture
 
@@ -52,20 +52,20 @@ Every connector request follows `Request -> Safety validation -> Provider execut
 
 ## Runtime flow
 
-Personal Secretary follows `Project snapshots -> deterministic synthesis -> Safety validation -> recommendation -> user decision`. Enhancement and Collaboration are optional data/insight gateways. An explicit Automation request may be forwarded, but Automation retains approval and execution authority. AI Hub is a reserved optional interface; Personal Secretary v1.0.0 has no AI dependency.
+Personal Secretary follows `Project snapshots -> deterministic synthesis -> Safety validation -> recommendation -> user decision`. Enhancement and Collaboration are optional data/insight gateways. An explicit Automation request may be forwarded, but Automation retains approval and execution authority. AI Hub is the repository-owned common AI platform; Personal Secretary v1.0.0 still has no mandatory AI dependency.
 
 1. Streamlit loads the launcher and its public project catalog.
-2. The launcher resolves each destination from Streamlit Secrets, environment variables, or an approved default.
+2. The launcher resolves Living OS and Universal Learning Engine destinations from Streamlit Secrets, environment variables, or approved defaults; AI Hub always uses the internal repository route.
 3. The UI renders only project identity, a short purpose statement, and connection status.
 4. A user selects a project node.
-5. The browser navigates to that project's independent UI.
+5. External project nodes navigate to their UIs; AI Hub renders inside the current OS Ecosystem application.
 
 ## Boundaries
 
 ### Public ecosystem layer
 
 - Central ecosystem identity
-- Projects menu and direct external project links
+- Projects menu, direct external project links, and the integrated AI Hub route
 - Capability menu and approved shared-module scope
 - Governance constitution, rules, principles, standards, and policies
 - Master, repository, integration, and roadmap architecture
@@ -89,6 +89,8 @@ The public registry exposes approved identities, versions, classifications, and 
 
 Living OS and Universal Learning Engine retain their own UI, source boundaries, versions, tests, releases, persistence, and deployment lifecycles. OS Ecosystem does not import either application or read/write their data.
 
+AI Hub is not covered by the external-project independence contract. Its source, tests, configuration examples, and component documentation live under `AI-Hub/` in this repository. It is imported through the `ai_hub` package boundary, shares the OS Ecosystem deployment, and is published only as part of an OS Ecosystem release.
+
 ## Configuration and security
 
 - Only validated `http` or `https` destinations are rendered.
@@ -98,7 +100,7 @@ Living OS and Universal Learning Engine retain their own UI, source boundaries, 
 
 ## Deployment
 
-OS Ecosystem is deployed as its own Streamlit application. Each project is deployed independently, and its production URL is supplied to the launcher through deployment configuration.
+OS Ecosystem and AI Hub are deployed together as one Streamlit application. Living OS and Universal Learning Engine remain external connected applications whose destinations are supplied through deployment configuration.
 
 ## Documentation authority
 

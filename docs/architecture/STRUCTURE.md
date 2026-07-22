@@ -1,6 +1,6 @@
 # OS Ecosystem Structure
 
-Version: v0.5.0
+Version: v0.6.2
 
 ## Repository layout
 
@@ -15,6 +15,8 @@ Version: v0.5.0
 - Enhancement-Capability: independent Enhancement package and operational README
 - Automation-Capability: independent Automation package and operational README
 - Collaboration-Connectivity-Capability: independent connection contracts, runtime, and operational README
+- Personal-Secretary-Capability: independent advisory package and operational README
+- AI-Hub: integrated common AI platform component with `src`, `tests`, `docs`, `config`, and an ignored runtime `data` boundary
 - Living-OS: independently owned connected project workspace
 - Universal-Learning-Engine: independently owned connected project workspace
 
@@ -33,7 +35,7 @@ Version: v0.5.0
 
 The repository root contains runtime entry points, package boundaries, tests, and navigation files only. All authoritative design and lifecycle documents live under docs.
 
-Connected projects and capabilities remain independently versioned product surfaces. Moving documentation does not import their internals into the launcher or change runtime behavior.
+Living OS and Universal Learning Engine remain independently owned connected project surfaces. Capabilities retain their package boundaries. AI Hub is the explicit exception: it is owned by this repository, imported only through its package boundary, rendered by the OS Ecosystem application, and released under the OS Ecosystem version and tag.
 
 ## Placement rule
 
