@@ -1,5 +1,8 @@
 # OS Ecosystem Version History
 
+## v0.6.1
+Registered AI Hub as an official independent project and added its launcher card, top navigation entry, safe internal entry screen, responsive layout, and optional AI_HUB_URL dashboard connection.
+
 ## v0.6.0
 Added Personal Secretary Capability v1.0.0 with deterministic briefing, review, recommendation, reminder, priority, decision-support, notification, and integration contracts.
 

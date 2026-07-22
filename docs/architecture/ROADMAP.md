@@ -1,5 +1,13 @@
 # OS Ecosystem Roadmap
 
+## v0.6.1 - AI Hub Official Project Entry
+
+- [x] Register AI Hub beside Living OS and Universal Learning Engine.
+- [x] Add an AI Hub launcher card and top navigation entry.
+- [x] Provide a safe internal entry screen until AI_HUB_URL is configured.
+- [x] Preserve existing project destinations and responsive behavior.
+- [x] Add launcher, documentation, registry, and regression coverage.
+
 ## v0.6.0 - Personal Secretary Capability
 
 - [x] Approve advisory, project-neutral architecture and data ownership boundaries.

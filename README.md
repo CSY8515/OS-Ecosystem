@@ -2,28 +2,28 @@
 
 OS Ecosystem is the governance, architecture, registry, capability, and navigation layer that connects independent projects without merging their runtimes.
 
-**Current version:** v0.6.0
-**Release type:** Personal Secretary Capability Release
+**Current version:** v0.6.1
+**Release type:** Official Project Integration Patch
 **Status:** Stable
-**Projects:** Living OS, Universal Learning Engine
+**Projects:** Living OS, Universal Learning Engine, AI Hub
 **Capabilities:** Safety, Enhancement, Automation, Collaboration & Connectivity, Personal Secretary
 **Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
 
 ## Product contract
 
 - No sidebar and no conventional dashboard.
-- A compact menu exposes Projects, Capability, Personal Secretary, Automation, Connectivity, Governance, Architecture, and Registry.
+- A compact menu exposes Projects, AI Hub, Capability, Personal Secretary, Automation, Connectivity, Governance, Architecture, and Registry.
 - OS ECOSYSTEM remains the visual center, with independent projects presented as surrounding nodes.
 - Project nodes open each project's public Streamlit UI in a new browser tab.
 - Governance, architecture, and registry identities are visible while databases, runtimes, credentials, and operational internals remain hidden.
-- Living OS, Universal Learning Engine, Safety, Enhancement, Automation, Collaboration & Connectivity, and Personal Secretary keep independent ownership and release boundaries.
+- Living OS, Universal Learning Engine, AI Hub, Safety, Enhancement, Automation, Collaboration & Connectivity, and Personal Secretary keep independent ownership and release boundaries.
 
 ## Run locally
 
     pip install -r requirements.txt
     streamlit run app.py
 
-Living OS and Universal Learning Engine production URLs are configured as direct public destinations. They may be overridden with LIVING_OS_URL and ULE_URL through Streamlit Secrets or the environment.
+Living OS and Universal Learning Engine production URLs are configured as direct public destinations. They may be overridden with LIVING_OS_URL and ULE_URL through Streamlit Secrets or the environment. AI Hub uses its in-launcher entry screen until a safe HTTP(S) dashboard destination is supplied through AI_HUB_URL.
 
 ## Documentation
 
@@ -32,7 +32,7 @@ All authoritative design and lifecycle documents are managed below [docs](./docs
 - [Architecture](./docs/architecture/ARCHITECTURE.md): architecture, master design, structure, and roadmap
 - [Governance](./docs/governance/CONSTITUTION.md): constitution, rules, principles, standards, policies, decisions, and conventions
 - [Registry](./docs/registry/PROJECT_REGISTRY.md): projects, capabilities, versions, and releases
-- [Release](./docs/release/RELEASE_NOTES_v0.6.0.md): release notes, version history, and migration notes
+- [Release](./docs/release/RELEASE_NOTES_v0.6.1.md): release notes, version history, and migration notes
 - [Capabilities](./docs/capabilities/README.md): the common documentation rule and capability-specific contracts
 - [VERSION](./VERSION): current repository release identity
 
