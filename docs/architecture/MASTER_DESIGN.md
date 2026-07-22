@@ -1,71 +1,62 @@
 # OS Ecosystem Master Design
 
-Canonical version: v0.6.2
+Canonical version: v0.7.0
 
-## Product statement
+## Product definition
 
-OS Ecosystem is the quiet governance, navigation, capability, and common-platform layer for the ecosystem. It connects external projects while owning approved shared components such as AI Hub.
+OS Ecosystem is an explorable operating world, not a launcher list or decorative concept image. Independent Systems, internal components, Capabilities, Governance, and Registry appear in one coherent product language without changing their ownership boundaries.
 
-## Experience principles
+## Official visual direction
 
-1. **Center before chrome.** The first visual anchor is `OS ECOSYSTEM`, not navigation furniture.
-2. **Governed visibility.** Users can inspect approved governance, architecture, and registry identities while implementation details remain hidden.
-3. **One deliberate action.** A project node opens that project's UI directly.
-4. **Explicit ownership.** External project connection does not imply shared data ownership; repository-owned platforms follow the OS Ecosystem release lifecycle.
-5. **Calm technical confidence.** The interface feels precise, spacious, and operational without becoming a monitoring dashboard.
+The concept art is the interface:
 
-## Spatial design
+- space is the operating environment,
+- the World Tree is OS Ecosystem Core,
+- branches are explicit routes and relationships,
+- fruit represents independent connected Systems,
+- seed represents internal growth such as AI Hub,
+- growth represents Capability maturity,
+- roots represent Governance, Registry, Contract, and traceability.
 
-- Full-viewport canvas with no sidebar.
-- Compact top navigation for Projects, Capability, Secretary, Automation, Connectivity, Governance, Architecture, and Registry.
-- Document-like ecosystem sections continue below the preserved central launcher.
-- Circular central core containing the ecosystem identity and version.
-- Connected project nodes placed on opposing sides of the core.
-- Thin connection lines communicate membership, not data flow.
-- On narrow screens, the core and nodes form a clear vertical sequence.
+The authoritative component and usability rules are in the [Common UI System](./UI_SYSTEM.md).
 
-## Visual language
+## Experience priority
 
-- Near-black green background with a restrained grid.
-- Soft cyan as the single system accent.
-- Neutral sans-serif typography with compact technical labels.
-- Subtle orbital lines and ambient light; no decorative imagery.
-- Reduced-motion preferences disable rotation and transitions.
+1. Usability is more important than world-building.
+2. A new user must recognize action, destination, and tab behavior within three seconds.
+3. Action nodes use strong borders, arrows, explicit verbs, and full-card click areas.
+4. Current location and information landmarks do not imitate buttons.
+5. Korean comes first; official English identity is secondary.
+6. Header, Navigation, Breadcrumb, button, card, and state language stay consistent.
+7. Empty, Error, Loading, Ready, and Unavailable states explain the next step.
+8. Database, Runtime, Credential, and internal implementation remain hidden.
 
-## Node states
+## Art direction restraint
 
-- **Connected:** full contrast, interactive, and opens the project UI.
-- **Pending:** muted, non-interactive, and clearly requests a deployment address.
-- Internal errors and operational details are never exposed as node content.
+The commercial product should not look AI-generated. Excessive glow, decorative animation, meaningless effects, visual noise, and unreadable contrast are prohibited. Code-native SVG and CSS express the world because their meaning, state, accessibility, and responsive layout remain controllable.
 
-## Initial node copy
+## Screen structure
 
-### Living OS
+- sidebar-free common Product Header
+- Korean-first Navigation and Breadcrumb
+- concise Interaction Guide
+- interactive World Explorer containing the real System routes
+- expandable 6W context below primary actions
+- Capability growth cards
+- AI Hub, Governance, Architecture, and Registry detail sections
+- same information order on mobile and desktop
 
-“삶의 기록과 운영을 하나의 흐름으로”
+## Route behavior
 
-### Universal Learning Engine
-
-“어떤 주제든 구조화된 학습 경험으로”
+Living OS and Universal Learning Engine are Fruit action nodes opening their real HTTPS applications in new tabs. AI Hub is a Seed action node opening the internal route. OS Ecosystem Core is the World Tree landmark and explicitly states that it is the current location.
 
 ## Acceptance criteria
 
-- No visible Streamlit sidebar, toolbar, or generic dashboard cards.
-- `OS ECOSYSTEM` is centered at desktop widths.
-- Living OS, Universal Learning Engine, and AI Hub are the official public project/platform nodes.
-- Governance contains Constitution, Rules, Principles, Standards, and Policies.
-- Architecture contains Master Architecture, Repository Strategy, Integration Strategy, and Roadmap.
-- Registry contains Project Registry, Capability Registry, and Release History.
-- Capability contains Safety, Enhancement, Automation, Collaboration & Connectivity, and Personal Secretary, with each Capability's approved core modules visible.
-- Automation has a dedicated overview showing Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision.
-- The governed automation flow is visible as Validation, Risk Check, Approval, Execution, Logging, and Recovery.
-- Collaboration & Connectivity displays capability version, registered/available/degraded connectors, last health check, and recent result with demo state clearly labeled.
-- Personal Secretary displays capability version, briefing readiness, reminder ownership, recommendation mode, and notification status; its advice remains deterministic and non-autonomous.
-- Living OS and Universal Learning Engine nodes navigate to configured HTTP(S) UIs; AI Hub uses the repository-internal application route.
-- Missing or invalid destinations cannot become unsafe links.
-- Layout remains usable on mobile and with reduced motion.
-- Capability registry identity may be shown, but databases, runtimes, credentials, and implementation details remain hidden.
-
-## Documentation management
-
-All authoritative design, governance, registry, release, and capability documents are managed under docs. Documentation placement and links are part of the repository contract; documentation-only patches must preserve the runtime and visual product contract.
+- the concept world itself is usable navigation
+- every action exposes its destination behavior before click
+- external links use direct URLs, new tabs, and safe rel attributes
+- no redirect mechanisms are implemented
+- Home and AI Hub share the same shell and design tokens
+- 390px mobile has no horizontal overflow
+- keyboard focus and reduced motion are supported
+- existing Capability and AI Hub behavior remains compatible

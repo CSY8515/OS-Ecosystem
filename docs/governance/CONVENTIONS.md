@@ -1,6 +1,6 @@
 # Documentation Conventions
 
-Version: v0.5.0
+Version: v0.7.0
 
 - Use one level-one title.
 - State a version for release-bound documents.

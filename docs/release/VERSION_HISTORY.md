@@ -1,5 +1,8 @@
 # OS Ecosystem Version History
 
+## v0.7.0
+Unified OS Ecosystem into one Korean-first concept-as-interface product experience; made the World Tree, Fruit, Seed, branch, and growth language functional Navigation; standardized Header, Breadcrumb, action cards, status language, 6W Metadata, Governance responsibility, Registry and Route contracts; retained AI Hub internally and Living OS / Universal Learning Engine independently.
+
 ## v0.6.2
 Corrected AI Hub ownership: included its complete component implementation in OS Ecosystem, removed the external URL and independent release assumptions, added an internal dashboard route, and extended CI and release validation to AI Hub.
 

@@ -4,16 +4,16 @@ from ai_hub.domain.settings import SettingsRevision
 def render_settings(revision: SettingsRevision | None, ui=None) -> None:
     if ui is None:
         import streamlit as ui
-    ui.title("Settings")
+    ui.title("설정")
     if revision is None:
-        ui.warning("No settings revision is available.")
+        ui.warning("사용 가능한 설정 개정본이 없습니다.")
         return
     settings = revision.settings
-    ui.caption(f"Revision {revision.revision_id} · {revision.created_at.isoformat()}")
+    ui.caption(f"설정 개정본 {revision.revision_id} · {revision.created_at:%Y-%m-%d %H:%M} UTC")
     ui.json({
-        "Default Provider": settings.default_provider_id,
-        "Auto Routing": settings.auto_routing,
-        "Retry Count": settings.retry_count,
-        "Timeout": settings.timeout_seconds,
-        "Health Check Interval": settings.health_check_interval_seconds,
+        "기본 AI 제공자": settings.default_provider_id,
+        "자동 라우팅": settings.auto_routing,
+        "재시도 횟수": settings.retry_count,
+        "제한 시간(초)": settings.timeout_seconds,
+        "상태 확인 주기": settings.health_check_interval_seconds,
     })

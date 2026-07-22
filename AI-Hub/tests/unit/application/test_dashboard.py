@@ -45,6 +45,7 @@ class _UI:
     def columns(self, count): return [_Column(self.calls) for _ in range(count)]
     def subheader(self, value): self.calls.append(("subheader", value))
     def dataframe(self, value, **kwargs): self.calls.append(("dataframe", value))
+    def info(self, value): self.calls.append(("info", value))
 
 
 def test_dashboard_renderer_contains_only_operational_projection() -> None:
@@ -57,5 +58,21 @@ def test_dashboard_renderer_contains_only_operational_projection() -> None:
     render_dashboard(snapshot, ui)
     rendered = repr(ui.calls)
     assert "Openai" in rendered
-    assert "Raw prompts" in rendered
+    assert "원문 요청과 응답" in rendered
+    assert "AI 제공자" in rendered
+    assert "정상" in rendered
     assert "api_key" not in rendered
+
+
+def test_dashboard_empty_state_explains_next_step() -> None:
+    snapshot = DashboardQueryService().build_snapshot(
+        generated_at=datetime(2026, 7, 22, tzinfo=UTC),
+        providers=[],
+        metrics=DashboardMetrics(),
+    )
+    ui = _UI()
+    render_dashboard(snapshot, ui)
+    rendered = repr(ui.calls)
+    assert "연결된 AI 제공자가 없습니다" in rendered
+    assert "현재 외부 AI 호출은 수행되지 않습니다" in rendered
+    assert "제공자 없음" in rendered

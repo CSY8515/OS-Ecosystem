@@ -3,7 +3,7 @@
 ## DEC-0001: Central documentation root
 
 Status: Accepted
-Current release: v0.5.0
+Current release: v0.7.0
 
 ## ADR: Collaboration & Connectivity as an independent capability
 

@@ -13,6 +13,7 @@ class _UI:
     def columns(self, count): return [_Column() for _ in range(count)]
     def subheader(self, value): pass
     def dataframe(self, value, **kwargs): pass
+    def info(self, value): pass
 
 
 def test_operator_app_starts_without_provider_credentials() -> None:

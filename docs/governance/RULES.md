@@ -1,7 +1,8 @@
 # Ecosystem Rules
 
-Version: v0.6.2
+Version: v0.7.0
 
+0. Apply only OS Ecosystem operating responsibility; do not interpret or replace Ultra Brain-only Governance.
 1. Connected external projects remain independently deployable; repository-owned common platforms follow the OS Ecosystem lifecycle.
 2. External navigation uses direct public URLs; internal platform navigation uses repository-owned routes.
 3. Registries expose approved identity and version metadata only.

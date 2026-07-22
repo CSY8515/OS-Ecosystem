@@ -1,100 +1,49 @@
 # OS Ecosystem Roadmap
 
-## v0.6.2 - AI Hub Repository Integration Patch
+## v0.7.0 - Stable Product Integration
 
-- [x] Include the complete `AI-Hub/` source, tests, docs, configuration examples, and data boundary in OS Ecosystem.
-- [x] Remove `AI_HUB_URL` and every independent service/repository release assumption.
-- [x] Route the launcher card and top navigation to the integrated AI Hub dashboard.
-- [x] Add AI Hub to repository CI and the OS Ecosystem release lifecycle.
-- [x] Preserve secret exclusion and runtime-data isolation.
+- [x] 공식 OS System 계층과 책임 경계 확정
+- [x] 컨셉아트 자체를 UI로 사용하는 Common UI System 확정
+- [x] 세계수 Landmark, 열매·씨앗 Action, 성장 Axis를 실제 Navigation에 적용
+- [x] 3초 안에 동작과 목적지를 구분하는 Interaction Guide와 카드 문구 적용
+- [x] 과도한 Glow·장식·Animation을 제거하고 Code-native SVG/CSS로 시각 절제
+- [x] 한국어 사용자 노출 문구와 공통 Empty·Error·Loading 상태 최종 감사
+- [x] 1280px 데스크톱과 390px 모바일 실제 렌더링 검토
+- [x] 외부 폰트 요청 제거와 작은 글자 대비 개선
+- [x] 한국어 우선 통합 제품 셸 적용
+- [x] Header, Navigation, Breadcrumb, 카드·버튼·상태 규칙 통합
+- [x] System과 Capability에 6W Metadata Contract 적용
+- [x] AI Hub를 같은 제품 경험으로 통합
+- [x] Living OS와 Universal Learning Engine 직접 외부 링크 유지
+- [x] Project, Capability, Version, Contract, Route Registry 정리
+- [x] 기존 157개 테스트와 신규 v0.7.0 테스트 20개 통과
+- [x] Release Review 작성
+- [x] 사용자 승인
+- [ ] Commit, Push, GitHub Release, Streamlit Deploy, Production Verification
 
-## v0.6.1 - AI Hub Official Project Entry
+## Governance TODO
 
-- [x] Register AI Hub beside Living OS and Universal Learning Engine.
-- [x] Add an AI Hub launcher card and top navigation entry.
-- [x] Provide the initial AI Hub project entry screen.
-- [x] Preserve existing project destinations and responsive behavior.
-- [x] Add launcher, documentation, registry, and regression coverage.
+- [ ] 별도의 공식 ‘6대 운영 원칙’ 문서가 확정되면 원문 그대로 UI, Architecture, Governance, Capability에 반영
+- [x] 현재 `PRINCIPLES.md` 원문 유지
+- [x] 위 TODO를 v0.7.0 구현 차단 요소로 사용하지 않음
 
-## v0.6.0 - Personal Secretary Capability
+## 완료 이력
 
-- [x] Approve advisory, project-neutral architecture and data ownership boundaries.
-- [x] Implement Daily Briefing, Weekly Review, Monthly Review, Smart Reminder, Recommendation, Priority, Decision Support, Notification, and Secretary Service.
-- [x] Keep the default runtime deterministic and independent of AI.
-- [x] Integrate explicit Safety, Enhancement, Automation, and Collaboration gateways.
-- [x] Reserve the AI Hub interface for a later release.
-- [x] Add package, integration, launcher, documentation, and registry coverage.
-- [x] Prepare v0.6.0 release evidence.
+- v0.6.2: AI Hub Repository integration
+- v0.6.1: AI Hub official entry
+- v0.6.0: Personal Secretary Capability
+- v0.5.0: Collaboration & Connectivity Capability
+- v0.4.4: Documentation structure standardization
+- v0.4.3: Automation Capability
+- v0.3.3: Enhancement Capability
+- v0.2.3: Ecosystem governance and registry UI
 
-## v0.5.0 - Collaboration & Connectivity Capability
+## 이후 후보
 
-- [x] Approve project-neutral connector and exchange architecture.
-- [x] Implement registry, contracts, import/export, transformation, messaging, sync, health, failures, and execution records.
-- [x] Integrate explicit Safety, Enhancement, and Automation gateways.
-- [x] Add in-memory/fake-provider tests without external credentials.
-- [x] Register the capability and expose a clearly labeled launcher status view.
-- [x] Prepare central documentation and release evidence.
+- 공식 Project onboarding contract 확장
+- 내부 정보 노출 없는 availability signal
+- 승인된 독립 System 추가
+- 공통 UI 언어의 독립 System 적용 가이드 확장
+- 접근성·사용자 선호 확장
 
-## v0.4.4 - Documentation Structure Standardization
-
-- [x] Establish docs as the authoritative documentation root.
-- [x] Standardize Architecture, Governance, Registry, Release, and Capability categories.
-- [x] Move existing design and capability documents without changing runtime behavior.
-- [x] Update README and cross-document links.
-- [x] Add automated structure, link, and regression validation.
-- [x] Publish the v0.4.4 patch and verify the production deployment.
-## v0.4.3 - Automation Capability
-
-- [x] Approve the independent Automation Capability architecture.
-- [x] Preserve the Safety and Enhancement Capability structure and extension model.
-- [x] Implement Workflow, Scheduler, Trigger, Routine, Auto Execution, and Auto Decision.
-- [x] Add Safety validation, risk, approval, logging, and recovery interfaces.
-- [x] Add an Enhancement advisory-input interface.
-- [x] Add the Capability menu entry, dedicated Automation screen, and Registry identity.
-- [x] Add package, integration, launcher, and regression tests.
-- [x] Publish the v0.4.3 GitHub release and confirm the Streamlit deployment.
-
-## v0.3.3 - Enhancement Capability
-
-- [x] Approve the Enhancement Capability architecture.
-- [x] Preserve the Safety Capability structure and extension model.
-- [x] Implement Analytics, Learning, Pattern Analysis, Knowledge Management, Optimization, and Rule Generation.
-- [x] Add common public contracts, registry, isolated execution, records, and health.
-- [x] Add the Capability menu and Enhancement UI section.
-- [x] Register Enhancement in Architecture and Registry.
-- [x] Add package and ecosystem contract tests.
-- [x] Publish the v0.3.3 release and deploy the Streamlit application.
-
-## v0.2.3 - Ecosystem layer
-
-- [x] Establish the OS Ecosystem repository
-- [x] Confirm the current version
-- [x] Define architecture and boundaries
-- [x] Define repository structure
-- [x] Define the roadmap
-- [x] Approve the master design
-- [x] Implement the Streamlit launcher
-- [x] Add automated launcher tests
-- [x] Publish the GitHub release
-- [x] Deploy OS Ecosystem to Streamlit Community Cloud
-- [x] Connect the Universal Learning Engine production URL
-- [x] Preserve direct external links without redirect intermediaries
-- [x] Add Projects, Governance, Architecture, and Registry menus
-- [x] Publish the Ecosystem governance set
-- [x] Publish the architecture strategy set
-- [x] Publish project, capability, and release registries
-
-## Next - Connection maturity
-
-- Add a documented project onboarding contract.
-- Add non-invasive availability signaling without exposing internal health data.
-- Add more independent project nodes only after explicit approval.
-- Preserve the no-sidebar, no-dashboard product contract.
-
-## Later candidates
-
-- User-selectable node organization for larger ecosystems.
-- Accessibility and motion preferences beyond system defaults.
-- Deployment-status handoff documentation for project owners.
-
-These candidates are not implemented commitments.
+후보 항목은 구현 약속이 아니며 Architecture와 Governance 승인 후 진행합니다.

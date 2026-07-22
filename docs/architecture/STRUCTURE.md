@@ -1,42 +1,35 @@
 # OS Ecosystem Structure
 
-Version: v0.6.2
+Version: v0.7.0
 
 ## Repository layout
 
-- .github/workflows: repository validation automation
-- .streamlit: launcher theme and deployment configuration example
-- app.py: Streamlit launcher entry point
-- VERSION: current OS Ecosystem version
-- README.md: repository entry and documentation map
-- tests: launcher, regression, and documentation-structure tests
-- docs: all authoritative ecosystem and capability documentation
-- Safety-Capability: independent Safety package and operational README
-- Enhancement-Capability: independent Enhancement package and operational README
-- Automation-Capability: independent Automation package and operational README
-- Collaboration-Connectivity-Capability: independent connection contracts, runtime, and operational README
-- Personal-Secretary-Capability: independent advisory package and operational README
-- AI-Hub: integrated common AI platform component with `src`, `tests`, `docs`, `config`, and an ignored runtime `data` boundary
-- Living-OS: independently owned connected project workspace
-- Universal-Learning-Engine: independently owned connected project workspace
+- `.github/workflows`: CI 검증
+- `.streamlit`: Theme과 배포 설정 예시
+- `app.py`: 통합 제품 셸, World Explorer와 Streamlit 진입점
+- `VERSION`: OS Ecosystem Release identity
+- `AI-Hub/`: Repository 내부 AI 운영 구성요소
+- `Safety-Capability/`, `Enhancement-Capability/`, `Automation-Capability/`, `Collaboration-Connectivity-Capability/`, `Personal-Secretary-Capability/`: 독립 Capability 패키지
+- `Living-OS/`, `Universal-Learning-Engine/`: 독립 연결 System 작업공간
+- `tests/`: 제품, 문서, 회귀 Contract 검증
+- `docs/`: 모든 공식 문서
 
 ## Documentation layout
 
-- docs/architecture: architecture, master design, repository structure, and roadmap
-- docs/governance: constitution, rules, principles, standards, policies, decisions, and conventions
-- docs/registry: project, capability, version, and release registries
-- docs/release: release notes, version history, and migration notes
-- docs/capabilities: common capability documentation rule
-- docs/capabilities/safety: Safety design, contracts, gates, notes, and history
-- docs/capabilities/enhancement: Enhancement design, integration contract, notes, and history
-- docs/capabilities/automation: Automation design, integration contract, notes, and history
+- `docs/architecture`: Architecture, Master Design, Structure, Roadmap, Common UI System, Metadata·Navigation Contract
+- `docs/governance`: Constitution, Rules, Principles, Standards, Policies, Decisions, Conventions, 책임 경계
+- `docs/registry`: Project, Capability, Version, Release, Contract, Route Registry
+- `docs/release`: Release Note, Version History, Migration Note, Release Review
+- `docs/capabilities`: 공통 Capability 문서 규칙과 Capability별 계약
 
-## Ownership rule
+## 공통 UI 배치
 
-The repository root contains runtime entry points, package boundaries, tests, and navigation files only. All authoritative design and lifecycle documents live under docs.
+- `app.py`는 공통 Header, Navigation, Breadcrumb, World Explorer, Action Card, State Panel의 Runtime 구현을 소유합니다.
+- `docs/architecture/UI_SYSTEM.md`는 우주·세계수·가지·열매·씨앗·성장의 의미와 재사용 가능한 컴포넌트 계약을 소유합니다.
+- Living OS, Universal Learning Engine, Ultra Brain은 이 디자인 언어를 재사용할 수 있지만 Repository·Runtime·Governance 소유권은 이전되지 않습니다.
 
-Living OS and Universal Learning Engine remain independently owned connected project surfaces. Capabilities retain their package boundaries. AI Hub is the explicit exception: it is owned by this repository, imported only through its package boundary, rendered by the OS Ecosystem application, and released under the OS Ecosystem version and tag.
+## 배치 원칙
 
-## Placement rule
+Repository root는 실행 진입점, 패키지 경계, 테스트와 Navigation만 둡니다. 공식 설계와 수명주기 문서는 `docs/`에 둡니다. Package README는 운영 진입점이며 공식 문서를 대체하지 않습니다.
 
-Choose the narrowest authoritative category for every new document. Capability documents use docs/capabilities/<capability-name>. Package-local READMEs may contain operational instructions, but they must link to the central documentation index.
+AI Hub는 이 Repository가 소유하고 같은 Release와 배포를 따릅니다. Living OS와 Universal Learning Engine은 독립 소유권, 데이터, 테스트, Release, 배포를 유지합니다.

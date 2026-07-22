@@ -1,6 +1,6 @@
 # Ecosystem Standards
 
-Version: v0.6.2
+Version: v0.7.0
 
 - docs/architecture/: system design and repository structure
 - docs/governance/: authority and management rules

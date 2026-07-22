@@ -2,6 +2,39 @@
 
 All notable OS Ecosystem changes are recorded here. Releases follow semantic versioning and Git tags.
 
+## [0.7.0] - 2026-07-23
+
+### Added
+
+- Added shared Common UI System, 6W Metadata, Navigation, Route, Contract, and Governance responsibility contracts.
+- Added complete 6W explanations for connected Systems and Capabilities.
+- Added semantic World Tree, Fruit, Seed, branch, and growth-axis interface components.
+- Added Korean-first AI Hub metrics and an actionable empty state.
+- Added v0.7.0 product, documentation, link, accessibility, and boundary regression tests.
+
+### Changed
+
+- Unified the home and AI Hub Header, Navigation, Breadcrumb, card, button, and state language.
+- Completed a Korean-first visible-copy audit for titles, actions, lists, statuses, Empty state, and AI Hub operations.
+- Moved Action Nodes before the informational Core landmark in the narrow linear layout and compacted the first mobile viewport.
+- Removed the remote font request and increased small-text contrast without adding glow or decorative motion.
+- Made concept art the primary interface while keeping click actions, destinations, focus states, and ownership visually explicit.
+- Replaced decorative glow and motion with restrained code-native SVG/CSS world landmarks and action nodes.
+- Classified OS Ecosystem Core, AI Hub, Living OS, and Universal Learning Engine consistently across Architecture, UI, and Registry.
+- Kept Living OS and Universal Learning Engine as independent connected Systems using direct public application links.
+- Standardized Architecture, Governance, Registry, README, and version identity for v0.7.0.
+
+### Governance
+
+- Preserved `docs/governance/PRINCIPLES.md` unchanged.
+- Registered the separate official six operating principles as a non-blocking TODO.
+- Kept Ultra Brain-only Governance outside OS Ecosystem operating authority.
+
+### Validation
+
+- Passed the existing 157 tests and 20 new v0.7.0 tests: 177 total.
+- GitHub Actions, deployment, and production verification remain pending user approval and publication.
+
 ## [0.6.2] - 2026-07-22
 
 ### Added

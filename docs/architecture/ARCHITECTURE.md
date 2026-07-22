@@ -1,107 +1,57 @@
 # OS Ecosystem Architecture
 
-Version: v0.6.2
+Version: v0.7.0
 
 ## Purpose
 
-OS Ecosystem is the governance, architecture, registry, capability, navigation, and common-platform shell above project runtimes. It provides shared system authority and reusable cross-project capabilities while retaining caller data ownership.
+OS Ecosystem is the integrated operating layer that provides shared Navigation, Capability, AI operations, Governance, and Registry while retaining independent System ownership and deployment boundaries.
 
-## Capability architecture
+## Official hierarchy
 
 ```text
-OS Ecosystem
-`-- Capability Layer
-    |-- Safety Capability v1.0.0
-    |-- Enhancement Capability v1.0.0
-        |-- Analytics
-        |-- Learning
-        |-- Pattern Analysis
-        |-- Knowledge Management
-        |-- Optimization
-        `-- Rule Generation
-    `-- Automation Capability v1.0.0
-        |-- Workflow
-        |-- Scheduler
-        |-- Trigger
-        |-- Routine
-        |-- Auto Execution
-        `-- Auto Decision
-    `-- Collaboration & Connectivity v1.0.0
-        |-- Connector Registry and Contract
-        |-- Import / Export and Transformation
-        |-- Internal Messaging and Sync Foundation
-        |-- Health and Failure Handling
-        `-- Execution Records
-    `-- Personal Secretary Capability v1.0.0
-        |-- Daily / Weekly / Monthly Synthesis
-        |-- Reminder and Notification
-        |-- Recommendation and Priority
-        |-- Decision Support
-        `-- Advisory Secretary Service
+OS Ecosystem (OS System)
+|-- OS Ecosystem Core
+|   |-- Safety Capability v1.0.0
+|   |-- Enhancement Capability v1.0.0
+|   |-- Automation Capability v1.0.0
+|   |-- Collaboration & Connectivity Capability v1.0.0
+|   `-- Personal Secretary Capability v1.0.0
+|-- AI Hub v0.1.0 (repository-internal component)
+|-- Living OS v2.0.4 (independent connected system)
+`-- Universal Learning Engine v1.0.0 (independent connected system)
 ```
 
-Capabilities are independent packages with common core, interface, registry, execution, database, component, test, and documentation boundaries. Projects consume their public contracts explicitly; capabilities do not import projects or own project data. New capabilities and components follow the same registration and extension path.
+각 계층은 직접 하위 계약만 관리합니다. Each layer manages only its direct child contracts. OS Ecosystem does not own the internal UI, data, Runtime, or Release of Living OS or Universal Learning Engine.
 
-## Automation integration
+## Product shell and UI system
 
-Automation follows the governed flow `Validation -> Risk Check -> Approval -> Execution -> Logging`, with `Recovery` available after unexpected execution failures. Safety integration is an explicit gateway: denied or critical-risk work is blocked and Auto Execution requires user approval. Enhancement integration accepts advisory results from Analytics, Pattern Analysis, Optimization, and Rule Generation without transferring authority or data ownership.
+Home and AI Hub share the Header, Navigation, Breadcrumb, button, card, state, and responsive rules in the [Navigation Contract](./NAVIGATION_CONTRACT.md). The explorable world follows the [Common UI System](./UI_SYSTEM.md): World Tree means Core, Fruit means an independent System, Seed means an internal growing System, and branches mean explicit routes. Concept reuse by other Systems does not change ownership or Governance.
 
-## Collaboration and connectivity integration
-
-Every connector request follows `Request -> Safety validation -> Provider execution -> Response validation -> Sanitized record`. Providers are replaceable behind a base contract and publish supported operations explicitly. Enhancement consumes aggregate success, latency, and failure evidence. Automation invokes the same governed service method and cannot bypass Safety. Project data schemas, credentials, and business transformations remain with their owners.
+User explanations and Registry entries use the [6W Metadata Contract](./METADATA_CONTRACT.md).
 
 ## Runtime flow
 
-Personal Secretary follows `Project snapshots -> deterministic synthesis -> Safety validation -> recommendation -> user decision`. Enhancement and Collaboration are optional data/insight gateways. An explicit Automation request may be forwarded, but Automation retains approval and execution authority. AI Hub is the repository-owned common AI platform; Personal Secretary v1.0.0 still has no mandatory AI dependency.
+1. Streamlit loads the common product shell and public Registry.
+2. External destinations resolve from Secrets, environment variables, or approved defaults and only HTTP(S) is accepted.
+3. Living OS and Universal Learning Engine open through direct full-card links with `target="_blank"` and `noopener noreferrer`.
+4. AI Hub renders at the internal `?project=ai-hub` route.
+5. Capabilities are invoked only through public contracts and do not own project data.
 
-1. Streamlit loads the launcher and its public project catalog.
-2. The launcher resolves Living OS and Universal Learning Engine destinations from Streamlit Secrets, environment variables, or approved defaults; AI Hub always uses the internal repository route.
-3. The UI renders only project identity, a short purpose statement, and connection status.
-4. A user selects a project node.
-5. External project nodes navigate to their UIs; AI Hub renders inside the current OS Ecosystem application.
+## Capability flow
 
-## Boundaries
+- Automation: `Validation → Risk Check → Approval → Execution → Logging`, with Recovery after failure
+- Connectivity: `Request → Safety validation → Provider execution → Response validation → Sanitized record`
+- Personal Secretary: `Project snapshots → deterministic synthesis → Safety validation → recommendation → user decision`
+- AI Hub: provider-neutral settings, routing, status, and usage contracts; no credentials or raw sensitive data in UI
 
-### Public ecosystem layer
+## Public and hidden boundaries
 
-- Central ecosystem identity
-- Projects menu, direct external project links, and the integrated AI Hub route
-- Capability menu and approved shared-module scope
-- Governance constitution, rules, principles, standards, and policies
-- Master, repository, integration, and roadmap architecture
-- Project, capability, and release registries
-- Project nodes
-- Project descriptions
-- Destination links
-- Connection availability
+Public information includes System and Capability identity, purpose, version, status, Route, 6W explanation, and approved Contract. Databases, schemas, processes, credentials, secrets, internal adapters, and raw health data remain hidden.
 
-### Hidden operational layer
+## Governance boundary
 
-- Capability implementation details and feature registries
-- Databases, schemas, and storage
-- Runtime processes and execution contracts
-- Credentials and deployment secrets
-- Integration adapters and internal health data
-
-The public registry exposes approved identities, versions, classifications, and release history only. Implementation details remain hidden and cannot become dashboard content.
-
-## Independence contract
-
-Living OS and Universal Learning Engine retain their own UI, source boundaries, versions, tests, releases, persistence, and deployment lifecycles. OS Ecosystem does not import either application or read/write their data.
-
-AI Hub is not covered by the external-project independence contract. Its source, tests, configuration examples, and component documentation live under `AI-Hub/` in this repository. It is imported through the `ai_hub` package boundary, shares the OS Ecosystem deployment, and is published only as part of an OS Ecosystem release.
-
-## Configuration and security
-
-- Only validated `http` or `https` destinations are rendered.
-- Secrets are never embedded in links or displayed in the interface.
-- Invalid or missing project destinations render as unavailable nodes.
-- Navigation is user-initiated; the launcher performs no background project execution.
+OS Ecosystem owns connection, Registry, compatibility, validation, AI Hub lifecycle, and Release. It does not interpret or replace Ultra Brain-only Governance. The authority is defined by the [Responsibility Boundary](../governance/RESPONSIBILITY_BOUNDARY.md).
 
 ## Deployment
 
-OS Ecosystem and AI Hub are deployed together as one Streamlit application. Living OS and Universal Learning Engine remain external connected applications whose destinations are supplied through deployment configuration.
-
-## Documentation authority
-
-Architecture decisions are maintained in docs/architecture. Governance constraints, registry identities, release evidence, and capability contracts are maintained in their matching docs categories. Package-local READMEs are operational entry points and do not replace these authoritative documents.
+OS Ecosystem Core and AI Hub deploy as one Streamlit application. Living OS and Universal Learning Engine retain independent deployments.

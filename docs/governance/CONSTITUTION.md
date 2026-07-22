@@ -1,6 +1,8 @@
 # Ecosystem Constitution
 
-Version: v0.6.2
+Version: v0.7.0
+
+OS Ecosystem authority is limited by the [Responsibility Boundary](./RESPONSIBILITY_BOUNDARY.md). Ultra Brain-only Governance is outside this repository's operating authority.
 
 OS Ecosystem owns shared governance, architecture, registry, release standards, and explicitly approved common platform components without owning connected-project business data or runtime decisions.
 

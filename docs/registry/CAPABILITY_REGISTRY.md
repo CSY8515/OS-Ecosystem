@@ -1,17 +1,14 @@
 # Capability Registry
 
-Version: v0.6.2
+Version: v0.7.0
+Parent: OS Ecosystem Core
 
-| Capability | Version | Status | Documentation |
-| --- | --- | --- | --- |
-| Safety | v1.0.0 | Stable | [Safety](../capabilities/safety/README.md) |
-| Enhancement | v1.0.0 | Stable | [Enhancement](../capabilities/enhancement/README.md) |
-| Automation | v1.0.0 | Stable | [Automation](../capabilities/automation/README.md) |
-| Collaboration & Connectivity | v1.0.0 | Stable | [Collaboration & Connectivity](../capabilities/collaboration-connectivity/README.md) |
-| Personal Secretary | v1.0.0 | Stable | [Personal Secretary](../capabilities/personal-secretary/README.md) |
+| Capability | Version | Product status | Runtime note | Documentation |
+| --- | --- | --- | --- | --- |
+| Safety | v1.0.0 | Stable | 공개 안전 계약 | [Safety](../capabilities/safety/README.md) |
+| Enhancement | v1.0.0 | Stable | 결정론적 분석 계약 | [Enhancement](../capabilities/enhancement/README.md) |
+| Automation | v1.0.0 | Stable | 승인 기반 실행 계약 | [Automation](../capabilities/automation/README.md) |
+| Collaboration & Connectivity | v1.0.0 | Stable | 현재 UI provider는 local demo | [Collaboration](../capabilities/collaboration-connectivity/README.md) |
+| Personal Secretary | v1.0.0 | Stable | 결정 지원, 비자율 | [Personal Secretary](../capabilities/personal-secretary/README.md) |
 
-Collaboration & Connectivity depends on Safety, Enhancement, and Automation contracts. It provides Connector Registry, Connection Contract, Import / Export, Data Transformation, Internal Messaging, Sync Foundation, Health Check, Failure Handling, and Execution Record.
-
-Personal Secretary consumes project-owned snapshots and existing capability contracts to provide deterministic briefings, reviews, recommendations, reminders, priorities, decision support, and notifications. It remains advisory and has no AI dependency.
-
-Implementations remain in existing code directories and follow the [Capability Documentation Standard](../capabilities/README.md).
+각 Capability는 독립 패키지와 공개 Contract를 유지하고 프로젝트 데이터나 권한을 소유하지 않습니다. UI 설명은 공통 6W Metadata를 사용하며 내부 Runtime과 DB는 노출하지 않습니다.

@@ -1,6 +1,6 @@
 # Ecosystem Policies
 
-Version: v0.5.0
+Version: v0.7.0
 
 Reviewed documents are published through main and a GitHub Release. Authoritative documents are moved, not duplicated, and migration notes record path changes.
 
