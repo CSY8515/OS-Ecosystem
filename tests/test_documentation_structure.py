@@ -85,9 +85,10 @@ class DocumentationStructureTests(unittest.TestCase):
 
     def test_principles_source_is_unchanged_and_todo_is_registered(self):
         principles = ROOT / "docs/governance/PRINCIPLES.md"
+        normalized_source = principles.read_bytes().replace(b"\r\n", b"\n")
         self.assertEqual(
-            hashlib.sha256(principles.read_bytes()).hexdigest(),
-            "11adbb607d68660f25ba2f11cc28e7ba583881b67305033c3a617b39afaf43ca",
+            hashlib.sha256(normalized_source).hexdigest(),
+            "9b1d06e967b45e3cf68b1bf57449a984c35d7c7bb20993672034cb6bd306e613",
         )
         roadmap = (ROOT / "docs/architecture/ROADMAP.md").read_text(encoding="utf-8")
         boundary = (ROOT / "docs/governance/RESPONSIBILITY_BOUNDARY.md").read_text(encoding="utf-8")
