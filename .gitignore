@@ -44,6 +44,14 @@ pip-wheel-metadata/
 *.swo
 backups/
 
+# Integrated AI Hub component: commit source/examples, never local secrets or state
+/AI-Hub/.env
+/AI-Hub/.env.*
+!/AI-Hub/.env.example
+/AI-Hub/.streamlit/secrets.toml
+/AI-Hub/data/*
+!/AI-Hub/data/.gitkeep
+
 # JavaScript build and dependency artifacts
 node_modules/
 .npm/
@@ -59,6 +67,6 @@ Desktop.ini
 .vscode/
 
 
-# Connected projects remain independent repositories
+# Connected external projects remain independent repositories
 /Living-OS/
 /Universal-Learning-Engine/

@@ -1,6 +1,6 @@
 # Ecosystem Standards
 
-Version: v0.5.0
+Version: v0.6.2
 
 - docs/architecture/: system design and repository structure
 - docs/governance/: authority and management rules
@@ -9,3 +9,5 @@ Version: v0.5.0
 - docs/capabilities/: common and per-Capability documents
 
 Directories use lowercase. Authoritative filenames use uppercase snake case. Every release validates paths, links, versions, Streamlit startup, and runtime tests.
+
+Repository-owned platform components may preserve approved product directory names such as `AI-Hub/`. They must keep source, tests, configuration examples, runtime data, and secrets in their documented boundaries and participate in the root CI and release workflow.

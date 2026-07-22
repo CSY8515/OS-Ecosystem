@@ -1,6 +1,6 @@
 # Capability Registry
 
-Version: v0.6.0
+Version: v0.6.2
 
 | Capability | Version | Status | Documentation |
 | --- | --- | --- | --- |
