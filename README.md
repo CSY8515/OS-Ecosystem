@@ -2,9 +2,9 @@
 
 OS Ecosystem은 독립 시스템과 공통 Capability를 하나의 일관된 제품 경험으로 연결하는 통합 운영 계층입니다.
 
-**Current version:** v0.7.1
-**Release type:** Concept-as-Interface UI Patch
-**Status:** Local UI Review
+**Current version:** v0.72
+**Release type:** Interactive World UI Finalization
+**Status:** Stable
 **OS Systems:** OS Ecosystem Core, AI Hub, Living OS, Universal Learning Engine
 **Capabilities:** Safety, Enhancement, Automation, Collaboration & Connectivity, Personal Secretary
 **Production:** https://8javbq85jtappi6tkdhkt7g.streamlit.app/
@@ -41,7 +41,8 @@ OS Ecosystem은 독립 시스템과 공통 Capability를 하나의 일관된 제
 - [Registry](./docs/registry/PROJECT_REGISTRY.md)
 - [Contract Registry](./docs/registry/CONTRACT_REGISTRY.md)
 - [Release](./docs/release/VERSION_HISTORY.md)
-- [v0.7.1 UI Patch 검토](./docs/release/RELEASE_REVIEW_v0.7.1.md)
+- [v0.72 Release Notes](./docs/release/RELEASE_NOTES_v0.72.md)
+- [v0.72 Release Review](./docs/release/RELEASE_REVIEW_v0.72.md)
 - [Capabilities](./docs/capabilities/README.md)
 - [VERSION](./VERSION)
 

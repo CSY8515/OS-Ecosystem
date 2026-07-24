@@ -2,8 +2,8 @@
 
 | Scope | Version | Authority |
 | --- | --- | --- |
-| OS Ecosystem | v0.7.1 (local UI review) | [VERSION](../../VERSION) |
-| AI Hub component | v0.1.0 (included in OS Ecosystem v0.7.1) | [Project Registry](./PROJECT_REGISTRY.md) |
+| OS Ecosystem | v0.72 (Stable) | [VERSION](../../VERSION) |
+| AI Hub component | v0.1.0 (included in OS Ecosystem v0.72) | [Project Registry](./PROJECT_REGISTRY.md) |
 | Safety Capability | v1.0.0 | [Release notes](../capabilities/safety/RELEASE_NOTES.md) |
 | Enhancement Capability | v1.0.0 | [Release notes](../capabilities/enhancement/RELEASE_NOTES.md) |
 | Automation Capability | v1.0.0 | [Release notes](../capabilities/automation/RELEASE_NOTES.md) |

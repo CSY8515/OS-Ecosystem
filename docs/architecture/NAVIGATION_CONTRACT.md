@@ -1,6 +1,6 @@
 # OS Ecosystem Navigation Contract
 
-Version: v0.7.1
+Version: v0.72
 
 ## Product shell
 
@@ -38,7 +38,7 @@ This orientation system replaces duplicate top-menu and card-grid navigation. It
 
 ## Interaction rules
 
-Clickable Project Seeds have a visible Korean function label, route arrow, distinct dome silhouette, hover/focus/active state, and full-object hit area. The selected OS Ecosystem World Tree label opens the internal Overview while preserving its current-location meaning. Home uses no instructional or descriptive paragraph.
+Clickable Project Seeds have a visible Korean function label, route arrow, distinct dome silhouette, Hover/Focus/Active state, and full-object hit area. Hover and Focus slightly lift and brighten the same Seed, strengthen its Project-color boundary, sharpen both label lines, and emphasize the route arrow without Glow, Neon, or Bloom. Active briefly compresses the Seed and returns immediately without delaying navigation. The selected OS Ecosystem World Tree label opens the internal Overview while preserving its current-location meaning. Home uses no instructional or descriptive paragraph.
 
 The selected World Tree uses `aria-current="location"`. External Project Seeds state “새 탭에서 열기”; the internal AI Hub Seed states “현재 화면에서 열기”.
 

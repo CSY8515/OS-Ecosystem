@@ -15,7 +15,7 @@ class LauncherContractTests(unittest.TestCase):
         return html_renderer.call_args.args[0]
 
     def test_version_matches_release(self):
-        self.assertEqual(app.VERSION, "0.7.1")
+        self.assertEqual(app.VERSION, "0.72")
 
     def test_initial_catalog_contains_official_systems(self):
         self.assertEqual(
@@ -280,7 +280,7 @@ class LauncherContractTests(unittest.TestCase):
         self.assertIn("cursor:pointer", source)
         self.assertNotIn("fonts.googleapis.com", source)
 
-    # v0.7.1 UI Patch acceptance tests
+    # v0.72 interactive world UI acceptance tests
     def test_top_text_menu_is_removed_in_favor_of_world_navigation(self):
         markup = self.launcher_markup()
         self.assertNotIn("ecosystem-nav", markup)
@@ -370,6 +370,33 @@ class LauncherContractTests(unittest.TestCase):
         self.assertIn(".project-seed.node-ai{grid-column:1/-1", mobile)
         self.assertIn("aspect-ratio:455/690", mobile)
         self.assertIn("aspect-ratio:470/441", mobile)
+
+    def test_project_seed_interaction_polish_is_subtle_and_complete(self):
+        source = Path(app.__file__).read_text(encoding="utf-8")
+        for rule in (
+            ".project-seed:after{content:\"\";position:absolute;z-index:1",
+            "background:color-mix(in srgb,var(--seed-accent) 7%,transparent)",
+            "transform:translateY(-3px) scale(1.004)",
+            ".project-seed:hover .project-seed-label strong{color:#fff}",
+            ".project-seed:hover .project-seed-label em{color:#f0f3ef}",
+            ".project-seed:focus-visible{outline:2px solid #f3f0e6!important",
+            ".project-seed:active{transform:translateY(-1px) scale(.992);transition-duration:.07s}",
+            ".project-seed:active .project-seed-label b{transform:scale(.92)}",
+            ".project-seed-label{position:absolute;z-index:2",
+        ):
+            self.assertIn(rule, source)
+        for forbidden in ("filter:brightness", "filter:saturate", "text-shadow:0 0"):
+            self.assertNotIn(forbidden, source)
+
+    def test_official_answer_geometry_remains_locked_for_v072(self):
+        source = Path(app.__file__).read_text(encoding="utf-8")
+        for locked_rule in (
+            ".project-seed.node-living{left:16.7%;top:26%;width:17%;height:61%",
+            ".project-seed.node-learning{left:68.1%;top:26%;width:17%;height:61%",
+            ".project-seed.node-ai{left:44.1%;top:58%;width:14.3%;height:41%",
+            "border-radius:49% 49% 20% 20%/61% 61% 18% 18%",
+        ):
+            self.assertIn(locked_rule, source)
 
     def test_rejected_dashboard_card_classes_are_removed(self):
         source = Path(app.__file__).read_text(encoding="utf-8")

@@ -1,6 +1,6 @@
 # Route Registry
 
-Version: v0.7.1
+Version: v0.72
 
 | Entry | Classification | Route | Behavior |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@ Version: v0.7.1
 | Architecture | OS Ecosystem | `#architecture` | current page |
 | Registry | OS Ecosystem | `#registry` | current page |
 
-The v0.7.1 Home world presents three Project Routes as semantic Dome Seeds containing Saplings: Living OS, Universal Learning Engine, and AI Hub. The selected World Tree label opens OS Ecosystem Overview without adding another Project. Capability, Governance, Architecture, Registry, and Contract Routes remain registered for compatibility but are not exposed on Home. The OS Ecosystem itself is the great Fruit, and its internal World Tree is the current Navigation Hub.
+The v0.72 Home world presents three Project Routes as semantic Dome Seeds containing Saplings: Living OS, Universal Learning Engine, and AI Hub. The selected World Tree label opens OS Ecosystem Overview without adding another Project. Capability, Governance, Architecture, Registry, and Contract Routes remain registered for compatibility but are not exposed on Home. The OS Ecosystem itself is the great Fruit, and its internal World Tree is the current Navigation Hub.
 
 External routes use their real public Streamlit application URL directly. Redirect intermediaries, login routes, `st.switch_page`, query redirect, and meta refresh are prohibited.
 

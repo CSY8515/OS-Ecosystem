@@ -1,5 +1,15 @@
 # OS Ecosystem Roadmap
 
+## v0.72 - Interactive World UI Finalization
+
+- [x] Official Answer, art assets, layout, Project positions, card geometry, labels, Routes, and responsive structure preserved
+- [x] Living OS·Universal Learning Engine·AI Hub full-Seed Hover brightness and Project-color boundary feedback
+- [x] Keyboard Focus parity with Hover and a thin visible focus indicator
+- [x] Short Active press feedback without navigation delay
+- [x] Desktop, Tablet, and 390px Mobile interaction and overflow verification
+- [x] v0.72 release metadata, changelog, registries, tests, and Release Notes
+- [ ] Commit, Push, Tag, GitHub Release, Streamlit Deploy, Production Verification
+
 ## v0.7.1 - Concept-as-Interface UI Patch
 
 - [x] 기존 Route와 Architecture를 World Atlas에 매핑
@@ -13,8 +23,8 @@
 - [x] 390px 세로 World Map과 최소 터치 영역 구현
 - [x] 공식 세계관·Navigation·접근성 UI 계약 테스트 정리
 - [x] Desktop 1440×900·1280×720과 390px Mobile 실제 렌더링 로컬 검토
-- [ ] 사용자 화면 승인
-- [ ] Commit, Push, Tag, GitHub Release, Streamlit Deploy
+- [x] 사용자 화면 승인
+- [x] Commit, Push, Tag, GitHub Release, Streamlit Deploy
 
 ## v0.7.0 - Stable Product Integration
 

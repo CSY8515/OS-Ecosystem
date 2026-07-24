@@ -1,10 +1,10 @@
 # Project Registry
 
-Version: v0.7.1
+Version: v0.72
 
 | OS System | Version | Classification | Official UI form | Status | Route |
 | --- | --- | --- | --- | --- | --- |
-| OS Ecosystem Core | v0.7.1 | Repository core | Fruit interior World Tree | Local UI Review | Home |
+| OS Ecosystem Core | v0.72 | Repository core | Fruit interior World Tree | Stable | Home |
 | AI Hub | v0.1.0 | Repository-internal Project | Dome Project Seed containing a Sapling | Integrated | `?project=ai-hub` |
 | Living OS | v2.0.4 | Independent connected Project | Dome Project Seed containing a Sapling | Stable | [공개 앱](https://living-os-h5uinmvmjpvv6m8phat28a.streamlit.app/) |
 | Universal Learning Engine | v1.0.0 | Independent connected Project | Dome Project Seed containing a Sapling | Stable | [공개 앱](https://universal-learning-engine-zb5aezuadeu84gnqust8mw.streamlit.app/) |

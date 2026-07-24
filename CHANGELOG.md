@@ -2,18 +2,33 @@
 
 All notable OS Ecosystem changes are recorded here. Releases follow semantic versioning and Git tags.
 
-## [0.7.1] - Unreleased
+## [0.72] - 2026-07-24
+
+### Changed
+
+- Completed the official world-based Home UI without changing its Official Answer, artwork, layout, Project geometry, labels, Routes, or responsive structure.
+- Added a restrained Project-color brightness layer to the full Living OS, Universal Learning Engine, and AI Hub Seed hit areas.
+- Unified Hover and keyboard Focus feedback across Seed boundary, label contrast, supporting label, and route arrow.
+- Added a short Active press response without delaying navigation.
+- Finalized Desktop, Tablet, and Mobile interaction behavior with reduced-motion and keyboard accessibility preserved.
+- Updated OS Ecosystem release identity and lifecycle documentation to v0.72.
+
+### Validation
+
+- Preserved all official artwork files and locked Project Seed coordinates.
+- Added v0.72 interaction and Official Answer geometry regression tests.
+- Verified direct Living OS and Universal Learning Engine destinations and the repository-owned AI Hub and OS Ecosystem Overview Routes.
+
+## [0.7.1] - 2026-07-24
 
 ### Changed
 
 - Replaced the black card-dashboard composition with a restrained World Atlas inside the OS Ecosystem Fruit.
 - Locked the supplied world composition as the official blueprint and refined only foliage, terrain, dome construction, material, and lighting quality.
-- Locked the supplied world composition as the official blueprint and refined only foliage, terrain, dome construction, material, and lighting quality.
 - Added the official `Universe → Ultra Brain → Meta OS → OS Ecosystem → Project → Subsystem → Module → Capability → Engine` world hierarchy.
 - Represented Living OS, Universal Learning Engine, and AI Hub as exactly three Dome Project Seeds, each containing its own sapling and ecosystem.
 - Kept the official English product brands while making visible functions and guidance Korean-first.
 - Replaced duplicate top navigation and internal card grids with one orientation bar and one world navigation surface containing only the three Projects.
-- Removed 6W and destination metadata attributes from Home markup while retaining their authoritative Architecture and Registry contracts.
 - Removed 6W and destination metadata attributes from Home markup while retaining their authoritative Architecture and Registry contracts.
 - Reflowed the same world into a vertical, touch-safe route map at 390px instead of scaling down the desktop composition.
 - Unified AI Hub with the Project Seed language while preserving its internal route and existing operational behavior.
@@ -26,8 +41,8 @@ All notable OS Ecosystem changes are recorded here. Releases follow semantic ver
 
 ### Validation
 
-- Added 19 UI contract tests on top of the existing 177-test baseline, including official key-visual ownership and semantic-navigation coverage.
-- Release publication and production deployment remain blocked until the user approves the actual Desktop and 390px Mobile renders.
+- Added UI contract tests on top of the existing 177-test baseline, including official key-visual ownership and semantic-navigation coverage.
+- Published the approved v0.7.1 Final UI after 201 tests and Production verification.
 
 ## [0.7.0] - 2026-07-23
 

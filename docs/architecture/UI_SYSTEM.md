@@ -1,7 +1,7 @@
 # OS Ecosystem Common UI System
 
-Version: v0.7.1
-Status: Official world-design candidate awaiting rendered-screen approval
+Version: v0.72
+Status: Official stable world UI
 
 ## Official hierarchy
 
@@ -70,8 +70,9 @@ Every Project action uses a clear dome shape, Korean-first function label, route
 
 ## State contract
 
-- `Hover`: subtle lift or boundary change that confirms the full hit area
-- `Focus`: keyboard-visible outline with information equivalent to Hover
+- `Hover`: the full Seed lifts 2–3px while its interior brightness, Project-color boundary, label contrast, and route arrow increase slightly
+- `Focus`: a thin keyboard-visible outline plus the same interior, boundary, label, and arrow information as Hover
+- `Active`: a brief sub-one-percent press response that never delays Route navigation
 - `Selected`: explicit current-location label and `aria-current`
 - `Motion`: restrained transition only; no continuous decorative animation
 - `Reduced motion`: all nonessential transitions are removed

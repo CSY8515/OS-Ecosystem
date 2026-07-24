@@ -1,6 +1,6 @@
 # OS Ecosystem Documentation
 
-Version: v0.7.1
+Version: v0.72
 
 `docs/` is the single management location for official OS Ecosystem documentation.
 
@@ -36,6 +36,8 @@ Version: v0.7.1
 
 ## Release
 
+- [v0.72 Release Notes](./release/RELEASE_NOTES_v0.72.md)
+- [v0.72 Release Review](./release/RELEASE_REVIEW_v0.72.md)
 - [v0.7.1 Release Notes](./release/RELEASE_NOTES_v0.7.1.md)
 - [v0.7.1 Release Review](./release/RELEASE_REVIEW_v0.7.1.md)
 - [v0.7.0 Release Notes](./release/RELEASE_NOTES_v0.7.0.md)

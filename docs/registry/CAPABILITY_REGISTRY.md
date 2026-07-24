@@ -1,6 +1,6 @@
 # Capability Registry
 
-Version: v0.7.1
+Version: v0.72
 Parent: OS Ecosystem Core
 
 | Capability | Version | Home visibility | Product status | Runtime note | Documentation |

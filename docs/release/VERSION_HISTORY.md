@@ -1,7 +1,10 @@
 # OS Ecosystem Version History
 
-## v0.7.1 (local review)
-Recomposed the v0.7.0 product shell as a restrained World Atlas inside the OS Ecosystem Fruit. The internal World Tree is the Navigation Hub, and Living OS, Universal Learning Engine, and AI Hub are exactly three Dome Project Seeds containing their own Saplings and ecosystems. Internal functions and developer structures stay off Home, official brands remain English, and the same three destinations become a vertical touch map at 390px. Architecture and behavior are unchanged; publication awaits rendered-screen approval.
+## v0.72
+Finalized the approved Official Answer as the stable interactive world UI. Living OS, Universal Learning Engine, and AI Hub retain their locked Seed geometry and Routes while gaining restrained full-area Hover brightness, Project-color boundary feedback, keyboard-equivalent Focus, and immediate Active press response. Desktop, Tablet, Mobile, accessibility, and cross-project navigation are finalized without artwork or Architecture changes.
+
+## v0.7.1
+Recomposed the v0.7.0 product shell as a restrained World Atlas inside the OS Ecosystem Fruit. The internal World Tree is the Navigation Hub, and Living OS, Universal Learning Engine, and AI Hub are exactly three Dome Project Seeds containing their own Saplings and ecosystems. Internal functions and developer structures stay off Home, official brands remain English, and the same three destinations become a vertical touch map at 390px.
 
 ## v0.7.0
 Unified OS Ecosystem into one Korean-first concept-as-interface product experience; made the World Tree, Fruit, Seed, branch, and growth language functional Navigation; standardized Header, Breadcrumb, action cards, status language, 6W Metadata, Governance responsibility, Registry and Route contracts; retained AI Hub internally and Living OS / Universal Learning Engine independently.

@@ -49,6 +49,8 @@ class DocumentationStructureTests(unittest.TestCase):
             "docs/release/RELEASE_REVIEW_v0.7.0.md",
             "docs/release/RELEASE_NOTES_v0.7.1.md",
             "docs/release/RELEASE_REVIEW_v0.7.1.md",
+            "docs/release/RELEASE_NOTES_v0.72.md",
+            "docs/release/RELEASE_REVIEW_v0.72.md",
             "docs/release/VERSION_HISTORY.md",
             "CHANGELOG.md",
             "AI-Hub/README.md",
@@ -67,11 +69,11 @@ class DocumentationStructureTests(unittest.TestCase):
             self.assertFalse((ROOT / filename).exists(), filename)
 
     def test_release_identity_is_consistent(self):
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.7.1")
+        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.72")
         app_source = (ROOT / "app.py").read_text(encoding="utf-8")
-        self.assertIn('VERSION = "0.7.1"', app_source)
-        self.assertIn("OS Ecosystem v0.7.1", app_source)
-        self.assertIn("v0.7.1", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "0.72"', app_source)
+        self.assertIn("OS Ecosystem v0.72", app_source)
+        self.assertIn("v0.72", (ROOT / "README.md").read_text(encoding="utf-8"))
 
     def test_ai_hub_is_integrated_and_external_url_is_not_supported(self):
         source = (ROOT / "app.py").read_text(encoding="utf-8")
