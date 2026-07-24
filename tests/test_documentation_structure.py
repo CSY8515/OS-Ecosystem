@@ -47,6 +47,8 @@ class DocumentationStructureTests(unittest.TestCase):
             "docs/release/RELEASE_NOTES_v0.6.2.md",
             "docs/release/RELEASE_NOTES_v0.7.0.md",
             "docs/release/RELEASE_REVIEW_v0.7.0.md",
+            "docs/release/RELEASE_NOTES_v0.7.1.md",
+            "docs/release/RELEASE_REVIEW_v0.7.1.md",
             "docs/release/VERSION_HISTORY.md",
             "CHANGELOG.md",
             "AI-Hub/README.md",
@@ -65,11 +67,11 @@ class DocumentationStructureTests(unittest.TestCase):
             self.assertFalse((ROOT / filename).exists(), filename)
 
     def test_release_identity_is_consistent(self):
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.7.0")
+        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.7.1")
         app_source = (ROOT / "app.py").read_text(encoding="utf-8")
-        self.assertIn('VERSION = "0.7.0"', app_source)
-        self.assertIn("OS Ecosystem v0.7.0", app_source)
-        self.assertIn("v0.7.0", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "0.7.1"', app_source)
+        self.assertIn("OS Ecosystem v0.7.1", app_source)
+        self.assertIn("v0.7.1", (ROOT / "README.md").read_text(encoding="utf-8"))
 
     def test_ai_hub_is_integrated_and_external_url_is_not_supported(self):
         source = (ROOT / "app.py").read_text(encoding="utf-8")
@@ -118,9 +120,11 @@ class DocumentationStructureTests(unittest.TestCase):
 
     def test_common_ui_system_is_portable_without_crossing_governance(self):
         content = (ROOT / "docs/architecture/UI_SYSTEM.md").read_text(encoding="utf-8")
-        for meaning in ("World Tree", "Fruit", "Seed", "Growth", "Root"):
+        for meaning in ("World Tree", "Fruit", "Project Seed", "Sapling", "Growth"):
             self.assertIn(meaning, content)
-        self.assertIn("Living OS, Universal Learning Engine, and Ultra Brain", content)
+        self.assertIn("exactly three Project Seeds", content)
+        self.assertIn("do not appear on Home", content)
+        self.assertIn("Living OS, Universal Learning Engine, Meta OS, and Ultra Brain", content)
         self.assertIn("does not transfer Repository ownership or Governance authority", content)
 
     def test_internal_markdown_links_resolve(self):

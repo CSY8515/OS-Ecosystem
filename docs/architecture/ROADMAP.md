@@ -1,5 +1,21 @@
 # OS Ecosystem Roadmap
 
+## v0.7.1 - Concept-as-Interface UI Patch
+
+- [x] 기존 Route와 Architecture를 World Atlas에 매핑
+- [x] 영문 브랜드명과 한국어 사용자 기능명 분리
+- [x] 검은 카드형 대시보드와 이중 Navigation 제거
+- [x] Universe → Ultra Brain → Meta OS → OS Ecosystem 공식 위치 계층 구현
+- [x] OS Ecosystem 열매 내부의 세계수를 실제 Navigation Hub로 구현
+- [x] Living OS·Universal Learning Engine·AI Hub를 묘목을 품은 세 Project Seed로 통일
+- [x] 메인 화면에서 Subsystem·Module·Capability·Engine·Registry·Contract를 제거하고 책임 화면 안에 유지
+- [x] AI Hub를 Project Seed 디자인 언어와 기존 내부 Route로 통합
+- [x] 390px 세로 World Map과 최소 터치 영역 구현
+- [x] 공식 세계관·Navigation·접근성 UI 계약 테스트 정리
+- [x] Desktop 1440×900·1280×720과 390px Mobile 실제 렌더링 로컬 검토
+- [ ] 사용자 화면 승인
+- [ ] Commit, Push, Tag, GitHub Release, Streamlit Deploy
+
 ## v0.7.0 - Stable Product Integration
 
 - [x] 공식 OS System 계층과 책임 경계 확정

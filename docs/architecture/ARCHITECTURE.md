@@ -25,7 +25,7 @@ OS Ecosystem (OS System)
 
 ## Product shell and UI system
 
-Home and AI Hub share the Header, Navigation, Breadcrumb, button, card, state, and responsive rules in the [Navigation Contract](./NAVIGATION_CONTRACT.md). The explorable world follows the [Common UI System](./UI_SYSTEM.md): World Tree means Core, Fruit means an independent System, Seed means an internal growing System, and branches mean explicit routes. Concept reuse by other Systems does not change ownership or Governance.
+Home and AI Hub share the Header, Navigation, Breadcrumb, action, state, and responsive rules in the [Navigation Contract](./NAVIGATION_CONTRACT.md). The explorable world follows the [Common UI System](./UI_SYSTEM.md): OS Ecosystem is the Fruit on the Meta OS branch, its internal World Tree is Core and Navigation Hub, and each Project is a Dome Seed containing its own Sapling and ecosystem. The Home world exposes only Living OS, Universal Learning Engine, and AI Hub; Subsystem, Module, Capability, Engine, Governance, Registry, and Contract remain inside their responsible Project surfaces or documentation. Concept reuse by other Systems does not change ownership or Governance.
 
 User explanations and Registry entries use the [6W Metadata Contract](./METADATA_CONTRACT.md).
 
